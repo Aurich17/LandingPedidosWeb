@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { SITE } from '../lib/site';
 
 type Props = {
 	title?: string;
@@ -14,6 +15,49 @@ const {
 } = Astro.props;
 
 const ogImage = new URL('/og-image.png', canonical).toString();
+const logoUrl = new URL('/logo.png', canonical).toString();
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		name: SITE.brandName,
+		url: canonical,
+		logo: logoUrl,
+		contactPoint: [
+			{
+				'@type': 'ContactPoint',
+				telephone: SITE.contactPhoneE164,
+				contactType: 'customer support',
+				areaServed: 'PE',
+				availableLanguage: ['es'],
+			},
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: SITE.brandName,
+		url: canonical,
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: title,
+		description,
+		url: canonical,
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'SoftwareApplication',
+		name: SITE.brandName,
+		applicationCategory: 'BusinessApplication',
+		operatingSystem: 'Web',
+		url: canonical,
+	},
+];
+
+const schemaJson = JSON.stringify(schema);
 ---
 
 <!doctype html>
@@ -25,6 +69,8 @@ const ogImage = new URL('/og-image.png', canonical).toString();
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href={canonical} />
 		<meta name="theme-color" content="#25D366" />
+
+		<script type="application/ld+json" set:html={schemaJson}></script>
 
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Pedidos Web" />

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Problem from "../components/sections/Problem.astro";
+import HowItWorks from "../components/sections/HowItWorks.astro";
+import Benefits from "../components/sections/Benefits.astro";
+import Pricing from "../components/sections/Pricing.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import Footer from "../components/sections/Footer.astro";
+import SeoLandingSection from "../components/SeoLandingSection.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/recibir-pedidos-por-whatsapp/");
+const title = "Recibir pedidos por WhatsApp | Pedidos Web | Pedido organizado y con total";
+const description =
+  "Recibe pedidos por WhatsApp con el detalle completo: productos, cantidades, notas y total. Ideal para vender por Instagram y cerrar por chat sin desorden.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<SeoLandingSection
+			eyebrow="Pedidos por WhatsApp"
+			title="Recibe pedidos por WhatsApp sin caos"
+			lead="Tu cliente arma el pedido en tu catálogo y tú recibes un mensaje con el detalle y el total, listo para cobrar."
+			bullets={[
+				"Menos preguntas, más cierres",
+				"Pedido con notas (talla, color, indicaciones)",
+				"Funciona perfecto en celular",
+			]}
+		/>
+		<Problem />
+		<HowItWorks />
+		<Benefits />
+		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+

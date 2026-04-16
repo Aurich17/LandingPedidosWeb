@@ -1,0 +1,49 @@
+---
+type Props = {
+	eyebrow: string;
+	title: string;
+	lead: string;
+	bullets?: string[];
+};
+
+const { eyebrow, title, lead, bullets = [] } = Astro.props;
+---
+
+<section class="section seo">
+	<div class="container">
+		<div class="head">
+			<span class="eyebrow">{eyebrow}</span>
+			<h1 class="h1">{title}</h1>
+			<p class="lead">{lead}</p>
+		</div>
+
+		{bullets.length > 0 && (
+			<ul class="bullets">
+				{bullets.map((b) => (
+					<li>{b}</li>
+				))}
+			</ul>
+		)}
+	</div>
+</section>
+
+<style>
+	.seo {
+		padding-top: 48px;
+	}
+
+	.head {
+		max-width: 900px;
+	}
+
+	.bullets {
+		margin: 18px 0 0;
+		padding-left: 18px;
+		color: var(--muted);
+		font-weight: 650;
+		display: grid;
+		gap: 10px;
+		max-width: 900px;
+	}
+</style>
+

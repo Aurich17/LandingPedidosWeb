@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Demo from "../components/sections/Demo.astro";
+import HowItWorks from "../components/sections/HowItWorks.astro";
+import Benefits from "../components/sections/Benefits.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import Footer from "../components/sections/Footer.astro";
+import SeoLandingSection from "../components/SeoLandingSection.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/demo/");
+const title = "Demo | Pedidos Web | Prueba cómo llegan los pedidos por WhatsApp";
+const description =
+  "Mira una demo de cómo se verá tu catálogo y cómo se envía un pedido por WhatsApp con detalle y total. Ideal para negocios que venden por redes.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<SeoLandingSection
+			eyebrow="Demo"
+			title="Prueba el flujo completo: catálogo → carrito → WhatsApp"
+			lead="En minutos entiendes cómo funciona: el cliente arma su pedido y a ti te llega todo listo para atender y cobrar."
+			bullets={[
+				"Catálogo claro para compartir en redes",
+				"Pedido con cantidades, notas y total",
+				"Optimizado para celular",
+			]}
+		/>
+		<Demo demoUrl={SITE.demoUrl} />
+		<HowItWorks />
+		<Benefits />
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+

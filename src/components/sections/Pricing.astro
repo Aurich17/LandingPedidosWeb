@@ -1,9 +1,10 @@
 ---
 type Props = {
 	appUrl: string;
+	whatsappUrl: string;
 };
 
-const { appUrl } = Astro.props;
+const { appUrl, whatsappUrl } = Astro.props;
 ---
 
 <section id="precios" class="section pricing">
@@ -46,7 +47,7 @@ const { appUrl } = Astro.props;
 					<li>Personalización (logo y colores)</li>
 					<li>Soporte prioritario</li>
 				</ul>
-				<a class="btn btn-primary plan-cta" href={appUrl}>Crear mi tienda en 1 minuto</a>
+				<a class="btn btn-primary plan-cta" href={appUrl}>Crear mi tienda</a>
 			</div>
 
 			<div class="card plan">
@@ -62,7 +63,7 @@ const { appUrl } = Astro.props;
 					<li>Reportes y métricas (próximamente)</li>
 					<li>Integraciones (próximamente)</li>
 				</ul>
-				<a class="btn btn-secondary plan-cta" href={appUrl}>Hablar con ventas</a>
+				<a class="btn btn-secondary plan-cta" href={whatsappUrl} target="_blank" rel="noopener">Hablar con ventas</a>
 			</div>
 		</div>
 	</div>

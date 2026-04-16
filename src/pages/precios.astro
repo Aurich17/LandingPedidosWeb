@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Pricing from "../components/sections/Pricing.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import Footer from "../components/sections/Footer.astro";
+import SeoLandingSection from "../components/SeoLandingSection.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/precios/");
+const title = "Precios | Pedidos Web (Perú) | Planes desde S/ 20/mes";
+const description =
+  "Planes para vender por WhatsApp con catálogo online y pedidos con detalle y total. Pro recomendado: S/ 30/mes. Mira precios y empieza hoy.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<SeoLandingSection
+			eyebrow="Precios"
+			title="Planes para vender por WhatsApp sin desorden"
+			lead="Elige un plan, crea tu tienda y empieza a recibir pedidos claros por WhatsApp. Precios en soles (Perú)."
+			bullets={[
+				"Un solo enlace para compartir tu catálogo",
+				"Pedidos con detalle y total por WhatsApp",
+				"Soporte para emprendedores y tiendas pequeñas",
+			]}
+		/>
+		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+		<FAQ />
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+

@@ -13,9 +13,9 @@ import FinalCTA from "../components/sections/FinalCTA.astro";
 import Footer from "../components/sections/Footer.astro";
 import { SITE } from "../lib/site";
 
-const title = "Pedidos Web | Tu catálogo online listo para WhatsApp";
+const title = "Pedidos Web | Vende por WhatsApp sin desorden";
 const description =
-  "Crea tu tienda en minutos, comparte un enlace y recibe pedidos ordenados por WhatsApp con detalle y total. Ideal para negocios que venden por redes.";
+  "Crea tu tienda online para WhatsApp en minutos. Recibe pedidos organizados con detalle y total sin perder tiempo en el chat.";
 ---
 <BaseLayout title={title} description={description} canonical={SITE.canonical}>
 	<Header appUrl={SITE.appUrl} />
@@ -26,7 +26,7 @@ const description =
 		<Benefits />
 		<Demo demoUrl={SITE.demoUrl} />
 		<Audience />
-		<Pricing appUrl={SITE.appUrl} />
+		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
 		<FAQ />
 		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
 	</main>

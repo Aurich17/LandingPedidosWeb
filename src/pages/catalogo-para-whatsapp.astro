@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Problem from "../components/sections/Problem.astro";
+import HowItWorks from "../components/sections/HowItWorks.astro";
+import Demo from "../components/sections/Demo.astro";
+import Benefits from "../components/sections/Benefits.astro";
+import Pricing from "../components/sections/Pricing.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import Footer from "../components/sections/Footer.astro";
+import SeoLandingSection from "../components/SeoLandingSection.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/catalogo-para-whatsapp/");
+const title = "Catálogo para WhatsApp | Pedidos Web | Link para vender más rápido";
+const description =
+  "Crea un catálogo para WhatsApp con link para compartir. Tus clientes ven productos y precios, arman su pedido y te llega por WhatsApp con detalle y total.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<SeoLandingSection
+			eyebrow="Catálogo para WhatsApp"
+			title="Tu catálogo para WhatsApp en un solo enlace"
+			lead="Deja de enviar fotos una por una. Comparte un link con tus productos, y recibe pedidos claros por WhatsApp."
+			bullets={[
+				"Link para poner en Instagram y estados",
+				"Productos con fotos, precios y opciones",
+				"Pedido con detalle y total listo para cobrar",
+			]}
+		/>
+		<Problem />
+		<HowItWorks />
+		<Demo demoUrl={SITE.demoUrl} />
+		<Benefits />
+		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+

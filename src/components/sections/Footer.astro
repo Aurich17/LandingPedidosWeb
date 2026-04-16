@@ -1,4 +1,6 @@
 ---
+import { SITE } from "../../lib/site";
+
 const year = new Date().getFullYear();
 ---
 
@@ -8,20 +10,30 @@ const year = new Date().getFullYear();
 			<img class="logo-img" src="/logo.png" alt="Pedidos Web" />
 			<div class="tag">Tu catálogo online listo para WhatsApp.</div>
 			<div class="desc">Crea tu tienda, comparte un enlace y recibe pedidos ordenados por WhatsApp con detalle y total.</div>
+			<a class="contact" href={SITE.whatsappUrl} target="_blank" rel="noopener">
+				<img class="wa-icon" src="/ico_web.png" alt="" aria-hidden="true" />
+				<span class="contact-text">WhatsApp: {SITE.contactPhoneDisplay}</span>
+			</a>
 		</div>
 
 		<div class="cols" aria-label="Enlaces">
 			<div class="col">
 				<div class="col-title">Producto</div>
-				<a href="#como-funciona">Cómo funciona</a>
-				<a href="#caracteristicas">Características</a>
-				<a href="#precios">Precios</a>
+				<a href="/#como-funciona">Cómo funciona</a>
+				<a href="/#caracteristicas">Características</a>
+				<a href="/#precios">Precios</a>
 			</div>
 			<div class="col">
 				<div class="col-title">Recursos</div>
-				<a href="#demo">Demo</a>
-				<a href="#faq">FAQ</a>
+				<a href="/#demo">Demo</a>
+				<a href="/#faq">FAQ</a>
 				<a href="/">Inicio</a>
+			</div>
+			<div class="col">
+				<div class="col-title">SEO</div>
+				<a href="/catalogo-para-whatsapp/">Catálogo para WhatsApp</a>
+				<a href="/tienda-online-para-whatsapp/">Tienda online para WhatsApp</a>
+				<a href="/recibir-pedidos-por-whatsapp/">Recibir pedidos por WhatsApp</a>
 			</div>
 		</div>
 	</div>
@@ -71,9 +83,43 @@ const year = new Date().getFullYear();
 		font-weight: 600;
 	}
 
+	.contact {
+		margin-top: 12px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 8px;
+		padding: 10px 12px;
+		border-radius: 12px;
+		border: 1px solid rgba(37, 211, 102, 0.22);
+		background: rgba(37, 211, 102, 0.08);
+		color: #0b1220;
+		font-weight: 800;
+		width: fit-content;
+		white-space: nowrap;
+	}
+
+	.contact:hover {
+		background: rgba(37, 211, 102, 0.12);
+	}
+
+	.wa-icon {
+		width: 18px;
+		height: 18px;
+		flex: 0 0 auto;
+		min-width: 18px;
+		border-radius: 4px;
+		object-fit: cover;
+	}
+
+	.contact-text {
+		white-space: nowrap;
+		line-height: 1.2;
+	}
+
 	.cols {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 18px;
 	}
 
@@ -114,6 +160,9 @@ const year = new Date().getFullYear();
 
 	@media (max-width: 920px) {
 		.footer-inner {
+			grid-template-columns: 1fr;
+		}
+		.cols {
 			grid-template-columns: 1fr;
 		}
 	}

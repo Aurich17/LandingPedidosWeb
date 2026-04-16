@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Benefits from "../components/sections/Benefits.astro";
+import HowItWorks from "../components/sections/HowItWorks.astro";
+import Demo from "../components/sections/Demo.astro";
+import Pricing from "../components/sections/Pricing.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import Footer from "../components/sections/Footer.astro";
+import SeoLandingSection from "../components/SeoLandingSection.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/tienda-online-para-whatsapp/");
+const title = "Tienda online para WhatsApp | Pedidos Web | Recibe pedidos con total";
+const description =
+  "Crea tu tienda online para WhatsApp en minutos. Comparte tu link, deja que el cliente arme el pedido y recibe el detalle y total por WhatsApp para cobrar y coordinar entrega.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<SeoLandingSection
+			eyebrow="Tienda online para WhatsApp"
+			title="Convierte WhatsApp en tu tienda online"
+			lead="Tu catálogo se ve profesional y tus clientes compran desde el celular. Tú recibes el pedido ordenado por WhatsApp."
+			bullets={[
+				"Catálogo online listo para compartir",
+				"Pedidos con cantidades, notas y total",
+				"Perfecto para negocios que venden por redes",
+			]}
+		/>
+		<Benefits />
+		<HowItWorks />
+		<Demo demoUrl={SITE.demoUrl} />
+		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+		<FAQ />
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+
