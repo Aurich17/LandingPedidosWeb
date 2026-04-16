@@ -8,10 +8,12 @@ type Props = {
 };
 
 const {
-	title = 'Pedidos Web | Tu catálogo online listo para WhatsApp',
-	description = 'Crea tu tienda en minutos, comparte un enlace y recibe pedidos ordenados por WhatsApp con detalle y total. Ideal para negocios que venden por redes.',
+	title = 'Pedidos Web | Vende por WhatsApp sin desorden',
+	description = 'Crea tu tienda online para WhatsApp en minutos. Recibe pedidos organizados con detalle y total sin perder tiempo en el chat.',
 	canonical = 'https://pedidosweb.shop/',
 } = Astro.props;
+
+const ogImage = new URL('/og-image.png', canonical).toString();
 ---
 
 <!doctype html>
@@ -20,6 +22,7 @@ const {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href={canonical} />
 		<meta name="theme-color" content="#25D366" />
 
@@ -27,11 +30,14 @@ const {
 		<meta property="og:site_name" content="Pedidos Web" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content="Pedidos Web" />
 		<meta property="og:url" content={canonical} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,8 +46,8 @@ const {
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap"
 		/>
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/png" href="/ico_web.png" />
+		<link rel="apple-touch-icon" href="/ico_web.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
