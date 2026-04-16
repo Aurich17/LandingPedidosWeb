@@ -1,0 +1,294 @@
+---
+type Props = {
+	appUrl: string;
+	demoUrl: string;
+};
+
+const { appUrl, demoUrl } = Astro.props;
+---
+
+<section class="hero">
+	<div class="container hero-inner">
+		<div class="copy">
+			<span class="eyebrow">Convierte WhatsApp en tu tienda online</span>
+			<h1 class="h1">Deja de vender por chat desordenado</h1>
+			<p class="lead">
+				Recibe pedidos listos para cobrar por WhatsApp, sin responder mensaje por mensaje.
+			</p>
+
+			<div class="cta-row">
+				<a class="btn btn-primary" href={appUrl}>Crear mi tienda en 1 minuto</a>
+				<a class="btn btn-secondary" href={demoUrl} target="_blank" rel="noopener">Ver demo</a>
+			</div>
+
+			<div class="trust-row" aria-label="Beneficios rápidos">
+				<span class="pill">Un solo enlace</span>
+				<span class="pill">Pedidos con total</span>
+				<span class="pill">Optimizado para celular</span>
+			</div>
+		</div>
+
+		<div class="visual" aria-label="Vista previa del sistema">
+			<div class="mock">
+				<div class="mock-top">
+					<div class="dots" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</div>
+					<div class="mock-url">tutienda.pedidosweb.shop</div>
+				</div>
+				<div class="mock-body">
+					<div class="mock-hero">
+						<div class="mock-avatar" aria-hidden="true"></div>
+						<div>
+							<div class="mock-title">Tienda Demo</div>
+							<div class="mock-sub">Compra fácil y pide por WhatsApp</div>
+						</div>
+					</div>
+
+					<div class="mock-grid">
+						<div class="mock-card">
+							<img class="mock-img" src="/landing_demo/Hot_dog.png" alt="Hot dog" loading="lazy" />
+							<div class="mock-row">
+								<span class="mock-name">Hot dog</span>
+								<span class="mock-price">S/ 29</span>
+							</div>
+							<div class="mock-btn">Agregar</div>
+						</div>
+						<div class="mock-card">
+							<img class="mock-img" src="/landing_demo/hamburguesa.webp" alt="Hamburguesa" loading="lazy" />
+							<div class="mock-row">
+								<span class="mock-name">Hamburguesa</span>
+								<span class="mock-price">S/ 45</span>
+							</div>
+							<div class="mock-btn">Agregar</div>
+						</div>
+						<div class="mock-card">
+							<img class="mock-img" src="/landing_demo/broster.avif" alt="Broster" loading="lazy" />
+							<div class="mock-row">
+								<span class="mock-name">Broster</span>
+								<span class="mock-price">S/ 18</span>
+							</div>
+							<div class="mock-btn">Agregar</div>
+						</div>
+						<div class="mock-card">
+							<img class="mock-img" src="/landing_demo/salchipapa.jpg" alt="Salchipapa" loading="lazy" />
+							<div class="mock-row">
+								<span class="mock-name">Salchipapa</span>
+								<span class="mock-price">S/ 32</span>
+							</div>
+							<div class="mock-btn">Agregar</div>
+						</div>
+					</div>
+
+					<div class="mock-checkout">
+						<div class="mock-total">
+							<span>Total</span>
+							<span>S/ 124</span>
+						</div>
+						<div class="mock-whatsapp">Enviar pedido por WhatsApp</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		padding: 78px 0 32px;
+		background:
+			radial-gradient(1100px 600px at 15% 10%, rgba(37, 211, 102, 0.16), transparent 55%),
+			radial-gradient(900px 520px at 90% 35%, rgba(59, 130, 246, 0.14), transparent 55%);
+	}
+
+	.hero-inner {
+		display: grid;
+		grid-template-columns: 1.05fr 0.95fr;
+		gap: 34px;
+		align-items: center;
+	}
+
+	.copy {
+		max-width: 560px;
+	}
+
+	.cta-row {
+		display: flex;
+		gap: 12px;
+		margin-top: 22px;
+		flex-wrap: wrap;
+	}
+
+	.trust-row {
+		display: flex;
+		gap: 10px;
+		margin-top: 18px;
+		flex-wrap: wrap;
+	}
+
+	.visual {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.mock {
+		width: min(520px, 100%);
+		border-radius: 20px;
+		border: 1px solid var(--border);
+		background: var(--surface);
+		box-shadow: var(--shadow-md);
+		overflow: hidden;
+	}
+
+	.mock-top {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 12px 14px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.dots {
+		display: inline-flex;
+		gap: 6px;
+	}
+
+	.dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.35);
+	}
+
+	.mock-url {
+		font-size: 12px;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		padding: 6px 10px;
+		border-radius: 999px;
+		flex: 1;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.mock-body {
+		padding: 16px;
+	}
+
+	.mock-hero {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 14px;
+		border-radius: var(--radius-md);
+		background: linear-gradient(180deg, rgba(37, 211, 102, 0.14), rgba(59, 130, 246, 0.06));
+		border: 1px solid rgba(37, 211, 102, 0.18);
+	}
+
+	.mock-avatar {
+		width: 44px;
+		height: 44px;
+		border-radius: 14px;
+		background: linear-gradient(180deg, var(--brand), var(--brand-strong));
+	}
+
+	.mock-title {
+		font-weight: 800;
+		letter-spacing: -0.02em;
+	}
+
+	.mock-sub {
+		font-size: 13px;
+		color: var(--muted);
+		margin-top: 2px;
+	}
+
+	.mock-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+		margin-top: 14px;
+	}
+
+	.mock-card {
+		border-radius: 14px;
+		border: 1px solid var(--border);
+		padding: 12px;
+		background: var(--surface);
+	}
+
+	.mock-img {
+		width: 100%;
+		height: 78px;
+		object-fit: cover;
+		border-radius: 12px;
+		border: 1px solid var(--border);
+		background: rgba(229, 231, 235, 0.04);
+	}
+
+	.mock-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 10px;
+		font-size: 13px;
+	}
+
+	.mock-name {
+		color: var(--muted);
+		font-weight: 650;
+	}
+
+	.mock-price {
+		font-weight: 800;
+	}
+
+	.mock-btn {
+		margin-top: 10px;
+		padding: 10px 12px;
+		text-align: center;
+		border-radius: 12px;
+		background: rgba(37, 211, 102, 0.12);
+		color: var(--brand);
+		font-weight: 800;
+		font-size: 13px;
+		border: 1px solid rgba(37, 211, 102, 0.18);
+	}
+
+	.mock-checkout {
+		margin-top: 14px;
+		border-top: 1px solid var(--border);
+		padding-top: 14px;
+	}
+
+	.mock-total {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 800;
+	}
+
+	.mock-whatsapp {
+		margin-top: 10px;
+		padding: 12px 12px;
+		border-radius: 14px;
+		background: linear-gradient(180deg, var(--brand), var(--brand-strong));
+		color: #fff;
+		font-weight: 850;
+		text-align: center;
+	}
+
+	@media (max-width: 920px) {
+		.hero {
+			padding: 54px 0 18px;
+		}
+
+		.hero-inner {
+			grid-template-columns: 1fr;
+		}
+
+		.visual {
+			justify-content: flex-start;
+		}
+	}
+</style>

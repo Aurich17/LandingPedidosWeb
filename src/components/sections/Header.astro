@@ -1,0 +1,94 @@
+---
+type Props = {
+	appUrl: string;
+};
+
+const { appUrl } = Astro.props;
+---
+
+<header class="site-header">
+	<div class="container container--wide header-inner">
+		<a class="logo" href="/">
+			<img class="logo-img" src="/logo.png" alt="Pedidos Web" />
+		</a>
+
+		<nav class="nav" aria-label="Secciones">
+			<a class="nav-link" href="#como-funciona">Cómo funciona</a>
+			<a class="nav-link" href="#caracteristicas">Características</a>
+			<a class="nav-link" href="#precios">Precios</a>
+			<a class="nav-link" href="#demo">Demo</a>
+			<a class="nav-link" href="#faq">FAQ</a>
+		</nav>
+
+		<div class="actions">
+			<a class="btn btn-primary" href={appUrl}>Crear mi tienda en 1 minuto</a>
+		</div>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		background: rgba(255, 255, 255, 0.90);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--border);
+		box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+	}
+
+	.header-inner {
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.logo {
+		display: inline-flex;
+		align-items: center;
+		flex: 0 0 auto;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+
+	.logo-img {
+		height: 42px;
+		width: 240px;
+		object-fit: cover;
+		object-position: left center;
+		display: block;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1 1 auto;
+		min-width: 0;
+		gap: 16px;
+	}
+
+	.nav-link {
+		color: var(--muted);
+		font-weight: 650;
+		font-size: 14px;
+	}
+
+	.nav-link:hover {
+		color: var(--text);
+	}
+
+	@media (max-width: 880px) {
+		.nav {
+			display: none;
+		}
+	}
+
+	.actions {
+		flex: 0 0 auto;
+	}
+</style>

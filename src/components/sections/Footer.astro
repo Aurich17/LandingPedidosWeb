@@ -1,0 +1,120 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+	<div class="container footer-inner">
+		<div class="brand">
+			<img class="logo-img" src="/logo.png" alt="Pedidos Web" />
+			<div class="tag">Tu catálogo online listo para WhatsApp.</div>
+			<div class="desc">Crea tu tienda, comparte un enlace y recibe pedidos ordenados por WhatsApp con detalle y total.</div>
+		</div>
+
+		<div class="cols" aria-label="Enlaces">
+			<div class="col">
+				<div class="col-title">Producto</div>
+				<a href="#como-funciona">Cómo funciona</a>
+				<a href="#caracteristicas">Características</a>
+				<a href="#precios">Precios</a>
+			</div>
+			<div class="col">
+				<div class="col-title">Recursos</div>
+				<a href="#demo">Demo</a>
+				<a href="#faq">FAQ</a>
+				<a href="/">Inicio</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container footer-bottom">
+		<div class="copy muted">© {year} Pedidos Web. Todos los derechos reservados.</div>
+		<div class="muted">Hecho para negocios que venden por WhatsApp.</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		padding: 56px 0 28px;
+		border-top: 1px solid var(--border);
+		background: linear-gradient(180deg, rgba(15, 23, 42, 0.03), transparent);
+	}
+
+	.footer-inner {
+		display: grid;
+		grid-template-columns: 1.3fr 1fr;
+		gap: 28px;
+		align-items: start;
+	}
+
+	.brand {
+		max-width: 520px;
+	}
+
+	.logo-img {
+		height: 90px;
+		width: min(520px, 100%);
+		object-fit: contain;
+		object-position: left center;
+		display: block;
+		border-radius: 10px;
+	}
+
+	.tag {
+		margin-top: 8px;
+		font-weight: 800;
+		letter-spacing: -0.01em;
+	}
+
+	.desc {
+		margin-top: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.cols {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.col {
+		display: grid;
+		gap: 10px;
+		align-content: start;
+	}
+
+	.col-title {
+		font-weight: 850;
+		letter-spacing: -0.01em;
+	}
+
+	.col a {
+		color: var(--muted);
+		font-weight: 700;
+	}
+
+	.col a:hover {
+		color: var(--text);
+	}
+
+	.footer-bottom {
+		margin-top: 22px;
+		padding-top: 18px;
+		border-top: 1px solid var(--border);
+		display: flex;
+		justify-content: space-between;
+		gap: 14px;
+		flex-wrap: wrap;
+	}
+
+	.copy {
+		font-weight: 600;
+		font-size: 13px;
+	}
+
+	@media (max-width: 920px) {
+		.footer-inner {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
