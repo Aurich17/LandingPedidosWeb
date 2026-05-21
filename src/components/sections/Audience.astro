@@ -1,51 +1,256 @@
-<section class="section section--tight">
+<section class="business-section">
 	<div class="container">
-		<div class="head">
-			<span class="eyebrow">Para quién</span>
-			<h2 class="h2">Ideal si cierras ventas por WhatsApp</h2>
-			<p class="lead">Pedidos Web encaja perfecto cuando tu negocio vende por redes y coordina pago por chat.</p>
+		<div class="business-head">
+			<h2 class="business-title">
+				Ideal para negocios que venden por WhatsApp
+			</h2>
+
+			<p class="business-subtitle">
+				PedidosWeb está pensado para emprendedores y negocios que reciben pedidos desde Instagram, Facebook o WhatsApp.
+			</p>
 		</div>
 
-		<div class="grid grid--3 list">
-			<div class="card">
-				<div class="title">Ropa y accesorios</div>
-				<p class="muted">Tallas, colores, stock y notas en el pedido.</p>
+		<div class="business-grid">
+			<div class="business-card">
+				<div class="business-icon">👕</div>
+
+				<div class="business-content">
+					<h3>Ropa y accesorios</h3>
+
+					<p>
+						Recibe pedidos con tallas, colores y variantes sin confusiones por chat.
+					</p>
+				</div>
 			</div>
-			<div class="card">
-				<div class="title">Cosmética</div>
-				<p class="muted">Catálogo claro para que compren sin preguntar todo.</p>
+
+			<div class="business-card">
+				<div class="business-icon">💄</div>
+
+				<div class="business-content">
+					<h3>Cosmética y belleza</h3>
+
+					<p>
+						Muestra productos de forma profesional y evita responder lo mismo una y otra vez.
+					</p>
+				</div>
 			</div>
-			<div class="card">
-				<div class="title">Regalos y detalles</div>
-				<p class="muted">Pedidos con mensaje y entrega coordinada por WhatsApp.</p>
+
+			<div class="business-card">
+				<div class="business-icon">🎁</div>
+
+				<div class="business-content">
+					<h3>Regalos y detalles</h3>
+
+					<p>
+						Organiza pedidos personalizados y coordina entregas directamente desde WhatsApp.
+					</p>
+				</div>
 			</div>
-			<div class="card">
-				<div class="title">Postres y comida</div>
-				<p class="muted">Notas de sabor, tamaño y fecha de entrega.</p>
+
+			<div class="business-card">
+				<div class="business-icon">🍔</div>
+
+				<div class="business-content">
+					<h3>Comida y postres</h3>
+
+					<p>
+						Recibe pedidos con sabores, tamaños y observaciones sin perder información.
+					</p>
+				</div>
 			</div>
-			<div class="card">
-				<div class="title">Emprendimientos por Instagram</div>
-				<p class="muted">Un link en bio con todo tu catálogo.</p>
+
+			<div class="business-card">
+				<div class="business-icon">📱</div>
+
+				<div class="business-content">
+					<h3>Ventas por Instagram</h3>
+
+					<p>
+						Comparte un solo enlace en tu bio y deja que tus clientes hagan pedidos fácilmente.
+					</p>
+				</div>
 			</div>
-			<div class="card">
-				<div class="title">Tiendas pequeñas</div>
-				<p class="muted">Presentación profesional sin web complicada.</p>
+
+			<div class="business-card">
+				<div class="business-icon">🛍️</div>
+
+				<div class="business-content">
+					<h3>Tiendas pequeñas</h3>
+
+					<p>
+						Ten una tienda online simple y profesional sin pagar por una web complicada.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	.head {
+	.business-section {
+		position: relative;
+		padding: 110px 0;
+		background:
+			radial-gradient(
+				circle at top right,
+				rgba(37, 211, 102, 0.08),
+				transparent 35%
+			),
+			linear-gradient(
+				to bottom,
+				#ffffff,
+				#f8fafc
+			);
+	}
+
+	.business-head {
 		max-width: 820px;
+		margin: 0 auto 60px;
+		text-align: center;
 	}
 
-	.list {
-		margin-top: 18px;
+	.business-badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px 18px;
+		border-radius: 999px;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-size: 14px;
+		font-weight: 800;
+		margin-bottom: 22px;
 	}
 
-	.title {
+	.business-title {
+		font-size: clamp(38px, 5vw, 62px);
+		line-height: 1;
+		font-weight: 950;
+		letter-spacing: -0.05em;
+		color: #0f172a;
+		max-width: 900px;
+		margin-inline: auto;
+	}
+
+	.business-subtitle {
+		margin-top: 22px;
+		font-size: 18px;
+		line-height: 1.8;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 720px;
+		margin-inline: auto;
+	}
+
+	.business-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 24px;
+	}
+
+	.business-card {
+		position: relative;
+		padding: 30px;
+		border-radius: 28px;
+		background: rgba(255, 255, 255, 0.88);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+		transition: 0.3s ease;
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.04);
+		overflow: hidden;
+	}
+
+	.business-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.04),
+				transparent
+			);
+		opacity: 0;
+		transition: 0.3s ease;
+	}
+
+	.business-card:hover {
+		transform: translateY(-4px);
+		box-shadow:
+			0 20px 40px rgba(15, 23, 42, 0.06);
+		border-color: rgba(37, 211, 102, 0.16);
+	}
+
+	.business-card:hover::before {
+		opacity: 1;
+	}
+
+	.business-icon {
+		width: 62px;
+		height: 62px;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 28px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.14),
+				rgba(37, 211, 102, 0.06)
+			);
+		margin-bottom: 22px;
+	}
+
+	.business-content h3 {
+		font-size: 22px;
 		font-weight: 900;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.03em;
+		color: #0f172a;
+		line-height: 1.2;
+	}
+
+	.business-content p {
+		margin-top: 14px;
+		font-size: 16px;
+		line-height: 1.8;
+		color: #64748b;
+		font-weight: 500;
+	}
+
+	@media (max-width: 980px) {
+		.business-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.business-section {
+			padding: 80px 0;
+		}
+
+		.business-title {
+			font-size: 42px;
+		}
+
+		.business-subtitle {
+			font-size: 16px;
+		}
+
+		.business-card {
+			padding: 24px;
+			border-radius: 24px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.business-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.business-title {
+			font-size: 36px;
+		}
 	}
 </style>

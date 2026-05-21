@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/sobre-nosotros/");
+const title = "Sobre Nosotros | Pedidos Web";
+const description =
+	"Conoce Pedidos Web: un sistema de catálogo y pedidos por WhatsApp para negocios. Diseñado para vender por redes con pedidos claros, con detalle y total.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container">
+				<span class="eyebrow">Sobre Pedidos Web</span>
+				<h1 class="h1">Hacemos que vender por WhatsApp sea más simple</h1>
+				<p class="lead">
+					Pedidos Web es un sistema pensado para emprendedores, tiendas pequeñas y negocios que venden por Instagram o WhatsApp y
+					necesitan un catálogo claro para recibir pedidos sin desorden.
+				</p>
+
+				<div class="grid grid--2 mt-24">
+					<div class="card">
+						<h2 class="h3">Nuestra misión</h2>
+						<p>
+							Ayudar a negocios a recibir pedidos listos para cobrar por WhatsApp: con productos, cantidades, notas y total en un solo
+							mensaje. Menos preguntas, más cierres.
+						</p>
+					</div>
+					<div class="card">
+						<h2 class="h3">Por qué existe</h2>
+						<p>
+							Vender por chat funciona, pero se vuelve caótico: fotos una por una, precios repetidos y pedidos incompletos. Pedidos Web
+							ordena el proceso con un link de catálogo que el cliente entiende en segundos.
+						</p>
+					</div>
+				</div>
+
+				<div class="mt-24">
+					<h2 class="h2">Qué resuelve para tu negocio</h2>
+					<p>
+						Con Pedidos Web puedes crear un catálogo online para WhatsApp en minutos y compartirlo como link en bio, estados o mensajes.
+						Tus clientes eligen productos y tú recibes el pedido con detalle y total por WhatsApp, listo para coordinar pago y entrega
+						(Yape, Plin, transferencia o efectivo).
+					</p>
+					<ul class="list">
+						<li>Un solo enlace para todo tu catálogo.</li>
+						<li>Pedidos con opciones (talla, color, sabor) y notas.</li>
+						<li>Mejor experiencia en celular para comprar rápido.</li>
+						<li>Presentación más profesional para tu marca.</li>
+					</ul>
+				</div>
+
+				<div class="mt-24">
+					<h2 class="h2">A quién ayudamos</h2>
+					<p>
+						Ideal si vendes por redes y cierras por chat: ropa y accesorios, cosmética, regalos, postres y comida por encargo,
+						emprendimientos que venden por Instagram/Facebook y atienden por WhatsApp.
+					</p>
+					<p class="muted">
+						Si quieres hablar con nosotros o pedir una demo guiada, visita la página de contacto y escríbenos por WhatsApp.
+					</p>
+					<a class="btn btn-secondary" href="/contacto/">Ir a contacto</a>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.mt-24 {
+		margin-top: 24px;
+	}
+
+	.list {
+		margin: 12px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	h2,
+	h3 {
+		margin: 0;
+	}
+
+	.card p {
+		margin: 10px 0 0;
+		color: var(--muted);
+		font-weight: 600;
+	}
+</style>

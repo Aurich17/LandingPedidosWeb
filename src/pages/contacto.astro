@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/contacto/");
+const title = "Contacto | Pedidos Web";
+const description =
+	"Contacto de Pedidos Web. Escríbenos por WhatsApp y te ayudamos a crear tu catálogo online, probar la demo y configurar tu tienda para recibir pedidos.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container">
+				<span class="eyebrow">Contacto</span>
+				<h1 class="h1">Habla con Pedidos Web</h1>
+				<p class="lead">
+					Si quieres una demo guiada, ayuda para configurar tu tienda o tienes preguntas sobre precios, escríbenos por WhatsApp.
+				</p>
+
+				<div class="grid grid--2 mt-24">
+					<div class="card">
+						<h2 class="h3">WhatsApp</h2>
+						<p class="muted">Respuesta rápida. Soporte para Perú y otros países.</p>
+						<a class="btn btn-primary mt-16" href={SITE.whatsappUrl} target="_blank" rel="noopener">
+							Escribir al {SITE.contactPhoneDisplay}
+						</a>
+					</div>
+					<div class="card">
+						<h2 class="h3">Enlaces útiles</h2>
+						<ul class="links">
+							<li><a href="/demo/">Ver demo</a></li>
+							<li><a href="/precios/">Ver precios</a></li>
+							<li><a href="/catalogo-para-whatsapp/">Catálogo para WhatsApp</a></li>
+							<li><a href="/tienda-online-para-whatsapp/">Tienda online para WhatsApp</a></li>
+							<li><a href="/recibir-pedidos-por-whatsapp/">Recibir pedidos por WhatsApp</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-24">
+					<h2 class="h2">Qué información enviar</h2>
+					<p class="muted">
+						Para ayudarte más rápido, envíanos: tipo de negocio (ropa, comida, cosmética, etc.), ciudad, si ya vendes por Instagram y
+						tu idea de precios/planes.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.mt-24 {
+		margin-top: 24px;
+	}
+
+	.mt-16 {
+		margin-top: 16px;
+	}
+
+	.card p {
+		margin: 10px 0 0;
+	}
+
+	.links {
+		margin: 12px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+	}
+
+	.links a {
+		color: var(--text);
+		font-weight: 700;
+	}
+
+	.links a:hover {
+		color: var(--brand-strong);
+	}
+</style>

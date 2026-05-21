@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/sections/Header.astro";
+import Footer from "../../components/sections/Footer.astro";
+import { SITE, canonicalUrl } from "../../lib/site";
+
+const canonical = canonicalUrl("/blog/");
+const title = "Blog: vender por WhatsApp | Pedidos Web";
+const description =
+	"Guías y consejos para vender por WhatsApp: catálogo digital, tomar pedidos, organizar el chat y recibir pedidos con detalle y total.";
+
+const posts = [
+	{
+		href: "/blog/como-tomar-pedidos-por-whatsapp/",
+		title: "Cómo tomar pedidos por WhatsApp (sin caos)",
+		desc: "Checklist y proceso para que tus clientes envíen pedidos completos: productos, cantidades, notas y total.",
+	},
+	{
+		href: "/blog/como-crear-catalogo-digital/",
+		title: "Cómo crear un catálogo digital para WhatsApp",
+		desc: "Qué incluir en tu catálogo, fotos, precios, link para compartir y cómo cerrar más rápido por chat.",
+	},
+	{
+		href: "/blog/como-vender-por-whatsapp/",
+		title: "Cómo vender por WhatsApp y aumentar cierres",
+		desc: "Mensajes, link en bio, objeciones, seguimiento y el flujo ideal para vender por redes y WhatsApp.",
+	},
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container">
+				<span class="eyebrow">Blog</span>
+				<h1 class="h1">Guías para vender por WhatsApp</h1>
+				<p class="lead">
+					Contenido práctico para emprendedores y negocios en Perú: catálogo para WhatsApp, cómo tomar pedidos y cómo vender sin perder
+					tiempo en el chat.
+				</p>
+
+				<div class="grid grid--3 mt-24">
+					{posts.map((post) => (
+						<a class="card post" href={post.href}>
+							<h2 class="h3">{post.title}</h2>
+							<p class="muted">{post.desc}</p>
+							<span class="more">Leer artículo →</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.mt-24 {
+		margin-top: 24px;
+	}
+
+	.post {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.post p {
+		margin: 10px 0 0;
+	}
+
+	.more {
+		margin-top: 12px;
+		display: inline-flex;
+		font-weight: 900;
+		color: var(--text);
+	}
+
+	.post:hover .more {
+		color: var(--brand-strong);
+	}
+</style>

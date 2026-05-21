@@ -9,9 +9,9 @@ import SeoLandingSection from "../components/SeoLandingSection.astro";
 import { SITE, canonicalUrl } from "../lib/site";
 
 const canonical = canonicalUrl("/precios/");
-const title = "Precios | Pedidos Web (Perú) | Planes desde S/ 20/mes";
+const title = "Planes Gratis y Pro | Pedidos Web";
 const description =
-  "Planes para vender por WhatsApp con catálogo online y pedidos con detalle y total. Pro recomendado: S/ 30/mes. Mira precios y empieza hoy.";
+  "Elige entre Gratis y Pro para vender por WhatsApp. Catálogo online con link para compartir y pedidos con detalle y total. Pro: S/50 al mes o $20/mes.";
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical}>
@@ -27,10 +27,9 @@ const description =
 				"Soporte para emprendedores y tiendas pequeñas",
 			]}
 		/>
-		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+		<Pricing appUrl={SITE.appUrl} />
 		<FAQ />
 		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
 	</main>
 	<Footer />
 </BaseLayout>
-

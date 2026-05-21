@@ -1,150 +1,375 @@
 ---
 type Props = {
 	appUrl: string;
-	whatsappUrl: string;
 };
 
-const { appUrl, whatsappUrl } = Astro.props;
+const { appUrl } = Astro.props;
 ---
 
-<section id="precios" class="section pricing">
+<section id="precios" class="pricing-section">
 	<div class="container">
-		<div class="head">
-			<span class="eyebrow">Precios</span>
-			<h2 class="h2">Planes simples para vender por WhatsApp</h2>
-			<p class="lead">Precios en soles (Perú). Disponible para otros países.</p>
+		<div class="pricing-head">
+			<h2 class="pricing-title">
+				Planes simples para vender por WhatsApp
+			</h2>
+
+			<p class="pricing-subtitle">
+				Empieza gratis y escala cuando tu negocio crezca.
+			</p>
 		</div>
 
-		<div class="grid grid--3 plans">
-			<div class="card plan">
-				<div class="plan-top">
-					<div class="plan-name">Básico</div>
-					<div class="plan-price">
-						<span class="price">S/ 20</span><span class="per">/ mes</span>
+		<div class="pricing-grid">
+			<!-- GRATIS -->
+			<div class="pricing-card">
+				<div class="pricing-card-header">
+					<div>
+
+						<h3 class="pricing-plan-name">Gratis</h3>
+					</div>
+
+					<div class="pricing-price-wrapper">
+						<div class="pricing-price">S/ 0</div>
+						<div class="pricing-price-alt">$0</div>
 					</div>
 				</div>
-				<ul class="plan-list">
+
+				<p class="pricing-description">
+					Empieza a recibir pedidos por WhatsApp en minutos.
+				</p>
+
+				<ul class="pricing-features">
+					<li>Hasta 20 productos</li>
 					<li>Catálogo online</li>
-					<li>Enlace para compartir</li>
-					<li>Pedidos a WhatsApp</li>
+					<li>Pedidos directo a WhatsApp</li>
+					<li>Link para compartir</li>
+					<li>Personalización básica</li>
+					<li>Subdominio gratis</li>
 					<li>Soporte estándar</li>
 				</ul>
-				<a class="btn btn-secondary plan-cta" href={appUrl}>Empezar</a>
+
+				<a href={appUrl} class="pricing-btn pricing-btn-secondary">
+					Empezar gratis
+				</a>
 			</div>
 
-			<div class="card plan card--highlight">
-				<div class="badge">Recomendado</div>
-				<div class="plan-top">
-					<div class="plan-name">Pro</div>
-					<div class="plan-price">
-						<span class="price">S/ 30</span><span class="per">/ mes</span>
+			<!-- PRO -->
+			<div class="pricing-card pricing-card-highlight">
+				<div class="pricing-card-header">
+					<div>
+						<h3 class="pricing-plan-name">Pro</h3>
+					</div>
+
+					<div class="pricing-price-wrapper">
+						<div class="pricing-price">
+							S/ 50
+							<span>/ mes</span>
+						</div>
+
+						<div class="pricing-price-alt">
+							$20 / month
+						</div>
 					</div>
 				</div>
-				<ul class="plan-list">
-					<li>Todo lo del Básico</li>
-					<li>Opciones (talla, color, sabor)</li>
+
+				<p class="pricing-description">
+					Todo lo que necesitas para vender profesionalmente por WhatsApp.
+				</p>
+
+				<ul class="pricing-features">
+					<li>Productos ilimitados</li>
+					<li>Pedidos ilimitados</li>
+					<li>Variantes de productos</li>
+					<li>Logo y colores personalizados</li>
 					<li>Pedido con detalle y total</li>
-					<li>Personalización (logo y colores)</li>
-					<li>Soporte prioritario</li>
+					<li>Catálogo profesional</li>
+					<li>Sin marca de PedidosWeb</li>
+					<li>Prioridad en soporte</li>
+					<li>Estadísticas básicas</li>
 				</ul>
-				<a class="btn btn-primary plan-cta" href={appUrl}>Crear mi tienda</a>
-			</div>
 
-			<div class="card plan">
-				<div class="plan-top">
-					<div class="plan-name">Premium</div>
-					<div class="plan-price">
-						<span class="price">S/ 60</span><span class="per">/ mes</span>
-					</div>
-				</div>
-				<ul class="plan-list">
-					<li>Todo lo del Pro</li>
-					<li>Dominio propio (próximamente)</li>
-					<li>Reportes y métricas (próximamente)</li>
-					<li>Integraciones (próximamente)</li>
-				</ul>
-				<a class="btn btn-secondary plan-cta" href={whatsappUrl} target="_blank" rel="noopener">Hablar con ventas</a>
+				<a href={appUrl} class="pricing-btn pricing-btn-primary">
+					Crear mi tienda
+				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	.pricing {
-		background: linear-gradient(180deg, rgba(59, 130, 246, 0.10), transparent);
+	.pricing-section {
+		padding: 110px 0;
+		background:
+			radial-gradient(circle at top, rgba(37, 211, 102, 0.08), transparent 40%),
+			linear-gradient(to bottom, #ffffff, #f8fafc);
 	}
 
-	.head {
-		max-width: 820px;
+	.pricing-head {
+		text-align: center;
+		max-width: 760px;
+		margin: 0 auto 60px;
 	}
 
-	.plans {
-		margin-top: 18px;
-	}
-
-	.plan {
-		position: relative;
-		padding: 20px;
-	}
-
-	.plan.card--highlight {
-		padding-top: 48px;
-	}
-
-	.badge {
-		position: absolute;
-		top: 16px;
-		left: 16px;
-		right: auto;
-		background: rgba(37, 211, 102, 0.14);
-		color: var(--brand);
-		border: 1px solid rgba(37, 211, 102, 0.20);
+	.pricing-tag {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 14px;
 		border-radius: 999px;
-		padding: 6px 10px;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-size: 13px;
 		font-weight: 800;
-		font-size: 12px;
-		z-index: 2;
+		margin-bottom: 18px;
 	}
 
-	.plan-top {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 12px;
-	}
-
-	.plan-name {
-		font-weight: 900;
-		letter-spacing: -0.02em;
-		font-size: 18px;
-	}
-
-	.plan-price {
-		display: flex;
-		align-items: baseline;
-		gap: 6px;
-	}
-
-	.price {
+	.pricing-title {
+		font-size: clamp(36px, 5vw, 60px);
+		line-height: 1;
 		font-weight: 950;
-		font-size: 24px;
+		letter-spacing: -0.05em;
+		color: #0f172a;
 	}
 
-	.per {
-		color: var(--muted);
+	.pricing-subtitle {
+		margin-top: 18px;
+		font-size: 18px;
+		line-height: 1.7;
+		color: #475569;
+		font-weight: 500;
+	}
+
+	.pricing-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 28px;
+		align-items: stretch;
+	}
+
+	.pricing-card {
+		position: relative;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		border-radius: 28px;
+		padding: 34px;
+		display: flex;
+		flex-direction: column;
+		box-shadow:
+			0 10px 40px rgba(15, 23, 42, 0.04);
+	}
+
+	.pricing-card-highlight {
+		border: 2px solid rgba(37, 211, 102, 0.25);
+		box-shadow:
+			0 25px 60px rgba(37, 211, 102, 0.12);
+		transform: translateY(-8px);
+	}
+
+	.pricing-popular {
+		position: absolute;
+		top: -14px;
+		left: 32px;
+		background: #22c55e;
+		color: white;
+		font-size: 13px;
+		font-weight: 800;
+		padding: 10px 16px;
+		border-radius: 999px;
+		box-shadow:
+			0 10px 25px rgba(34, 197, 94, 0.25);
+	}
+
+	.pricing-card-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.pricing-badge {
+		display: inline-flex;
+		padding: 8px 14px;
+		border-radius: 999px;
+		font-size: 13px;
+		font-weight: 800;
+		margin-bottom: 18px;
+	}
+
+	.pricing-badge-light {
+		background: rgba(15, 23, 42, 0.06);
+		color: #0f172a;
+	}
+
+	.pricing-plan-name {
+		font-size: 28px;
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		color: #0f172a;
+	}
+
+	.pricing-price-wrapper {
+		text-align: right;
+	}
+
+	.pricing-price {
+		font-size: 42px;
+		font-weight: 950;
+		letter-spacing: -0.05em;
+		color: #0f172a;
+		line-height: 1;
+	}
+
+	.pricing-price span {
+		font-size: 16px;
+		color: #64748b;
 		font-weight: 700;
 	}
 
-	.plan-list {
-		margin: 16px 0 18px;
-		padding-left: 18px;
-		color: var(--muted);
-		display: grid;
-		gap: 10px;
-		font-weight: 650;
+	.pricing-price-alt {
+		margin-top: 8px;
+		font-size: 14px;
+		color: #64748b;
+		font-weight: 700;
 	}
 
-	.plan-cta {
-		width: 100%;
+	.pricing-description {
+		margin-top: 24px;
+		font-size: 16px;
+		line-height: 1.7;
+		color: #475569;
+		font-weight: 500;
+	}
+
+	.pricing-features {
+		list-style: none;
+		padding: 0;
+		margin: 30px 0;
+		display: grid;
+		gap: 14px;
+	}
+
+	.pricing-features li {
+		position: relative;
+		padding-left: 28px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #0f172a;
+		line-height: 1.5;
+	}
+
+	.pricing-features li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #22c55e;
+		font-weight: 900;
+	}
+
+	.pricing-btn {
+		margin-top: auto;
+		height: 58px;
+		border-radius: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.pricing-btn-primary {
+		background: #22c55e;
+		color: white;
+		box-shadow:
+			0 10px 30px rgba(34, 197, 94, 0.22);
+	}
+
+	.pricing-btn-primary:hover {
+		transform: translateY(-2px);
+		background: #16a34a;
+	}
+
+	.pricing-btn-secondary {
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.1);
+		color: #0f172a;
+	}
+
+	.pricing-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.pricing-faq {
+		margin-top: 40px;
+		padding: 28px;
+		border-radius: 24px;
+		background: rgba(255, 255, 255, 0.7);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 22px;
+	}
+
+	.faq-item {
+		padding: 6px;
+	}
+
+	.faq-question {
+		font-size: 15px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.faq-answer {
+		margin-top: 8px;
+		font-size: 14px;
+		line-height: 1.6;
+		color: #64748b;
+		font-weight: 500;
+	}
+
+	@media (max-width: 900px) {
+		.pricing-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.pricing-card-highlight {
+			transform: none;
+		}
+
+		.pricing-faq {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.pricing-section {
+			padding: 80px 0;
+		}
+
+		.pricing-card {
+			padding: 24px;
+			border-radius: 24px;
+		}
+
+		.pricing-title {
+			font-size: 40px;
+		}
+
+		.pricing-price {
+			font-size: 34px;
+		}
+
+		.pricing-card-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.pricing-price-wrapper {
+			text-align: left;
+		}
 	}
 </style>

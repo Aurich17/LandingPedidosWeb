@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/politica-de-privacidad/");
+const title = "Política de Privacidad | Pedidos Web";
+const description =
+	"Política de privacidad de Pedidos Web. Explica qué datos se recopilan, para qué se usan y cómo puedes contactarnos por WhatsApp para consultas.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container content">
+				<span class="eyebrow">Legal</span>
+				<h1 class="h1">Política de Privacidad</h1>
+				<p class="muted">Última actualización: {new Date().toISOString().slice(0, 10)}</p>
+
+				<h2 class="h2">1. Información que recopilamos</h2>
+				<p>
+					Podemos recopilar información que tú nos proporcionas al crear una cuenta o usar el servicio, como nombre del negocio, número de
+					WhatsApp, catálogo de productos (nombres, precios, fotos) y configuración de la tienda. También podemos recopilar datos técnicos
+					básicos para mejorar el rendimiento y la seguridad del sitio.
+				</p>
+
+				<h2 class="h2">2. Cómo usamos la información</h2>
+				<ul class="list">
+					<li>Para crear y mostrar tu tienda y tu catálogo online.</li>
+					<li>Para generar el mensaje de pedido con detalle y total que se envía por WhatsApp.</li>
+					<li>Para soporte, mejora del producto, seguridad y prevención de abuso.</li>
+				</ul>
+
+				<h2 class="h2">3. Compartir información</h2>
+				<p>
+					No vendemos tu información. La tienda que creas está pensada para ser pública para tus clientes (productos y precios), mientras que
+					tus datos de administración se mantienen privados. En ciertos casos, podemos usar proveedores de infraestructura para operar el
+					servicio, siempre con fines operativos.
+				</p>
+
+				<h2 class="h2">4. Cookies</h2>
+				<p>
+					Podemos usar cookies o tecnologías similares para mantener sesiones y mejorar la experiencia. Puedes controlar cookies desde la
+					configuración de tu navegador.
+				</p>
+
+				<h2 class="h2">5. Seguridad</h2>
+				<p>
+					Aplicamos medidas razonables para proteger la información. Aun así, ningún sistema es 100% infalible. Recomendamos usar contraseñas
+					seguras y proteger el acceso a tus cuentas.
+				</p>
+
+				<h2 class="h2">6. Contacto</h2>
+				<p>
+					Si tienes dudas sobre esta política, contáctanos por WhatsApp:
+					<a class="link" href={SITE.whatsappUrl} target="_blank" rel="noopener">{SITE.contactPhoneDisplay}</a>.
+				</p>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.content {
+		max-width: 900px;
+	}
+
+	.content p {
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.list {
+		margin: 10px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.link {
+		color: var(--text);
+		font-weight: 800;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+</style>

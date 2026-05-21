@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
+import { SITE, canonicalUrl } from "../lib/site";
+
+const canonical = canonicalUrl("/terminos-y-condiciones/");
+const title = "Términos y Condiciones | Pedidos Web";
+const description =
+	"Términos y condiciones de Pedidos Web. Condiciones de uso del servicio para crear un catálogo online y recibir pedidos por WhatsApp.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container content">
+				<span class="eyebrow">Legal</span>
+				<h1 class="h1">Términos y Condiciones</h1>
+				<p class="muted">Última actualización: {new Date().toISOString().slice(0, 10)}</p>
+
+				<h2 class="h2">1. Alcance del servicio</h2>
+				<p>
+					Pedidos Web ofrece una plataforma para que negocios creen una tienda/catálogo online y reciban pedidos por WhatsApp con detalle y
+					total. El cobro y la entrega se coordinan entre el negocio y el cliente.
+				</p>
+
+				<h2 class="h2">2. Responsabilidades del usuario</h2>
+				<ul class="list">
+					<li>Publicar información veraz de productos, precios y condiciones.</li>
+					<li>Respetar normas aplicables a su actividad comercial.</li>
+					<li>No usar el servicio para contenido ilegal o engañoso.</li>
+					<li>Proteger el acceso a su cuenta y credenciales.</li>
+				</ul>
+
+				<h2 class="h2">3. Pagos y suscripciones</h2>
+				<p>
+					Los planes y precios pueden variar con el tiempo. Cuando existan suscripciones activas, se comunicará la información relevante de
+					pagos y renovaciones dentro del producto o por canales oficiales.
+				</p>
+
+				<h2 class="h2">4. Disponibilidad</h2>
+				<p>
+					Buscamos mantener el servicio disponible, pero pueden existir interrupciones por mantenimiento, mejoras o causas externas. No se
+					garantiza disponibilidad ininterrumpida.
+				</p>
+
+				<h2 class="h2">5. Limitación de responsabilidad</h2>
+				<p>
+					Pedidos Web no es responsable por disputas entre negocio y cliente, entregas, devoluciones o problemas de pago. El negocio es quien
+					define políticas de atención, garantía y envío.
+				</p>
+
+				<h2 class="h2">6. Contacto</h2>
+				<p>
+					Si tienes dudas sobre estos términos, contáctanos por WhatsApp:
+					<a class="link" href={SITE.whatsappUrl} target="_blank" rel="noopener">{SITE.contactPhoneDisplay}</a>.
+				</p>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.content {
+		max-width: 900px;
+	}
+
+	.content p {
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.list {
+		margin: 10px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.link {
+		color: var(--text);
+		font-weight: 800;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+</style>

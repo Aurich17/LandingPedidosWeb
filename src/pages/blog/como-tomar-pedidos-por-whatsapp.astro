@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/sections/Header.astro";
+import Footer from "../../components/sections/Footer.astro";
+import FinalCTA from "../../components/sections/FinalCTA.astro";
+import { SITE, canonicalUrl } from "../../lib/site";
+
+const canonical = canonicalUrl("/blog/como-tomar-pedidos-por-whatsapp/");
+const title = "Cómo tomar pedidos por WhatsApp | Pedidos Web";
+const description =
+	"Guía para tomar pedidos por WhatsApp sin caos: estructura de mensaje, catálogo con link, checklist y cómo recibir pedidos con detalle y total.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container content">
+				<span class="eyebrow">Blog</span>
+				<h1 class="h1">Cómo tomar pedidos por WhatsApp (sin caos)</h1>
+				<p class="lead">
+					Si vendes por chat, ya sabes lo que pasa: precios repetidos, fotos sueltas y pedidos incompletos. Esta guía te ayuda a organizar tu
+					flujo para cerrar más rápido.
+				</p>
+
+				<h2 class="h2">El problema: “quiero 2 de ese”</h2>
+				<p>
+					Cuando un cliente escribe sin contexto, tú terminas adivinando: qué producto era, qué tamaño, cuánto cuesta y si incluye delivery.
+					El resultado es demoras, errores y ventas que se enfrían.
+				</p>
+
+				<h2 class="h2">Checklist de pedido (copia y pega)</h2>
+				<ul class="list">
+					<li>Producto(s) y cantidad</li>
+					<li>Opciones: talla, color, sabor</li>
+					<li>Notas: sin picante, con adicional, personalización</li>
+					<li>Dirección o punto de entrega</li>
+					<li>Forma de pago: Yape/Plin/transferencia/efectivo</li>
+				</ul>
+
+				<h2 class="h2">Paso a paso: cómo tomar pedidos por WhatsApp</h2>
+				<h3 class="h3">1) Publica tu catálogo y comparte un link</h3>
+				<p>
+					El primer cambio grande es dejar de enviar fotos una por una. Un catálogo para WhatsApp con link permite que el cliente vea todo en
+					una sola página, con precios y opciones.
+				</p>
+				<p>
+					Si aún no tienes catálogo, aquí tienes una guía:
+					<a class="link" href="/blog/como-crear-catalogo-digital/">cómo crear un catálogo digital para WhatsApp</a>.
+				</p>
+
+				<h3 class="h3">2) Haz que el cliente arme el pedido antes de escribirte</h3>
+				<p>
+					El flujo ideal es: catálogo → carrito → WhatsApp. Así el cliente elige productos y cantidades y te llega un mensaje con el detalle y
+					el total.
+				</p>
+
+				<h3 class="h3">3) Responde con un guion claro</h3>
+				<p>
+					Usa respuestas rápidas para confirmar: total, método de pago, tiempo de entrega y dirección. Mientras menos preguntas, más cierres.
+				</p>
+
+				<h2 class="h2">Cómo te ayuda Pedidos Web</h2>
+				<p>
+					Pedidos Web convierte WhatsApp en un sistema de pedidos simple: creas tu tienda, subes tus productos y compartes un enlace. El
+					cliente arma el pedido y a ti te llega por WhatsApp con detalle y total.
+				</p>
+				<ul class="list">
+					<li>Un solo enlace para Instagram, Facebook y estados</li>
+					<li>Pedidos con notas (talla/color/indicaciones)</li>
+					<li>Optimizado para celular</li>
+				</ul>
+
+				<div class="cta">
+					<a class="btn btn-primary" href="/demo/">Ver demo</a>
+					<a class="btn btn-secondary" href="/catalogo-para-whatsapp/">Catálogo para WhatsApp</a>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.content {
+		max-width: 920px;
+	}
+
+	.content p {
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.list {
+		margin: 10px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.link {
+		color: var(--text);
+		font-weight: 900;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.cta {
+		margin-top: 18px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+</style>

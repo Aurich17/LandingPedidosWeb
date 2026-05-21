@@ -8,84 +8,150 @@ const { appUrl, demoUrl } = Astro.props;
 ---
 
 <section class="hero">
-	<div class="container hero-inner">
-		<div class="copy">
-			<span class="eyebrow">Convierte WhatsApp en tu tienda online</span>
-			<h1 class="h1">Deja de vender por chat desordenado</h1>
-			<p class="lead">
-				Recibe pedidos listos para cobrar por WhatsApp, sin responder mensaje por mensaje.
+	<div class="container hero-container">
+		<div class="hero-copy">
+			<h1 class="hero-title">
+				Recibe pedidos por WhatsApp
+				<span>sin responder mensaje por mensaje</span>
+			</h1>
+
+			<p class="hero-description">
+				Crea tu catálogo online, comparte un solo enlace y recibe pedidos listos para cobrar directamente en WhatsApp.
 			</p>
 
-			<div class="cta-row">
-				<a class="btn btn-primary" href={appUrl}>Crear mi tienda</a>
-				<a class="btn btn-secondary" href={demoUrl} target="_blank" rel="noopener">Ver demo</a>
+			<div class="hero-actions">
+				<a class="hero-btn hero-btn-primary" href={appUrl}>
+					Crear mi tienda
+				</a>
+
+				<a
+					class="hero-btn hero-btn-secondary"
+					href={demoUrl}
+					target="_blank"
+					rel="noopener"
+				>
+					Ver tienda demo
+				</a>
 			</div>
 
-			<div class="trust-row" aria-label="Beneficios rápidos">
-				<span class="pill">Un solo enlace</span>
-				<span class="pill">Pedidos con total</span>
-				<span class="pill">Optimizado para celular</span>
+			<div class="hero-trust">
+				<div class="trust-item">
+					<span>✔</span>
+					Sin tarjeta de crédito
+				</div>
+
+				<div class="trust-item">
+					<span>✔</span>
+					Configura en minutos
+				</div>
+
+				<div class="trust-item">
+					<span>✔</span>
+					Optimizado para celular
+				</div>
 			</div>
 		</div>
 
-		<div class="visual" aria-label="Vista previa del sistema">
-			<div class="mock">
-				<div class="mock-top">
-					<div class="dots" aria-hidden="true">
-						<span></span><span></span><span></span>
+		<div class="hero-visual">
+			<div class="mockup">
+				<div class="mockup-header">
+					<div class="mockup-dots">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
-					<div class="mock-url">tutienda.pedidosweb.shop</div>
+
+					<div class="mockup-url">
+						tutienda.pedidosweb.shop
+					</div>
 				</div>
-				<div class="mock-body">
-					<div class="mock-hero">
-						<div class="mock-avatar" aria-hidden="true"></div>
+
+				<div class="mockup-body">
+					<div class="mockup-store">
+						<div class="mockup-store-avatar"></div>
+
 						<div>
-							<div class="mock-title">Tienda Demo</div>
-							<div class="mock-sub">Compra fácil y pide por WhatsApp</div>
+							<div class="mockup-store-title">
+								Tienda Demo
+							</div>
+
+							<div class="mockup-store-subtitle">
+								Compra fácil y pide por WhatsApp
+							</div>
 						</div>
 					</div>
 
-					<div class="mock-grid">
-						<div class="mock-card">
-							<img class="mock-img" src="/landing_demo/Hot_dog.png" alt="Hot dog" loading="lazy" />
-							<div class="mock-row">
-								<span class="mock-name">Hot dog</span>
-								<span class="mock-price">S/ 29</span>
+					<div class="mockup-products">
+						<div class="product-card">
+							<img
+								src="/landing_demo/Hot_dog.png"
+								alt="Hot dog"
+								loading="lazy"
+							/>
+
+							<div class="product-row">
+								<span>Hot dog</span>
+								<strong>S/ 29</strong>
 							</div>
-							<div class="mock-btn">Agregar</div>
+
+							<button>Agregar</button>
 						</div>
-						<div class="mock-card">
-							<img class="mock-img" src="/landing_demo/hamburguesa.webp" alt="Hamburguesa" loading="lazy" />
-							<div class="mock-row">
-								<span class="mock-name">Hamburguesa</span>
-								<span class="mock-price">S/ 45</span>
+
+						<div class="product-card">
+							<img
+								src="/landing_demo/hamburguesa.webp"
+								alt="Hamburguesa"
+								loading="lazy"
+							/>
+
+							<div class="product-row">
+								<span>Hamburguesa</span>
+								<strong>S/ 45</strong>
 							</div>
-							<div class="mock-btn">Agregar</div>
+
+							<button>Agregar</button>
 						</div>
-						<div class="mock-card">
-							<img class="mock-img" src="/landing_demo/broster.avif" alt="Broster" loading="lazy" />
-							<div class="mock-row">
-								<span class="mock-name">Broster</span>
-								<span class="mock-price">S/ 18</span>
+
+						<div class="product-card">
+							<img
+								src="/landing_demo/broster.avif"
+								alt="Broster"
+								loading="lazy"
+							/>
+
+							<div class="product-row">
+								<span>Broster</span>
+								<strong>S/ 18</strong>
 							</div>
-							<div class="mock-btn">Agregar</div>
+
+							<button>Agregar</button>
 						</div>
-						<div class="mock-card">
-							<img class="mock-img" src="/landing_demo/salchipapa.jpg" alt="Salchipapa" loading="lazy" />
-							<div class="mock-row">
-								<span class="mock-name">Salchipapa</span>
-								<span class="mock-price">S/ 32</span>
+
+						<div class="product-card">
+							<img
+								src="/landing_demo/salchipapa.jpg"
+								alt="Salchipapa"
+								loading="lazy"
+							/>
+
+							<div class="product-row">
+								<span>Salchipapa</span>
+								<strong>S/ 32</strong>
 							</div>
-							<div class="mock-btn">Agregar</div>
+
+							<button>Agregar</button>
 						</div>
 					</div>
 
-					<div class="mock-checkout">
-						<div class="mock-total">
+					<div class="mockup-footer">
+						<div class="mockup-total">
 							<span>Total</span>
-							<span>S/ 124</span>
+							<strong>S/ 124</strong>
 						</div>
-						<div class="mock-whatsapp">Enviar pedido por WhatsApp</div>
+
+						<div class="mockup-whatsapp">
+							Enviar pedido por WhatsApp
+						</div>
 					</div>
 				</div>
 			</div>
@@ -95,200 +161,362 @@ const { appUrl, demoUrl } = Astro.props;
 
 <style>
 	.hero {
-		padding: 78px 0 32px;
+		position: relative;
+		padding: 90px 0 70px;
+		overflow: hidden;
 		background:
-			radial-gradient(1100px 600px at 15% 10%, rgba(37, 211, 102, 0.16), transparent 55%),
-			radial-gradient(900px 520px at 90% 35%, rgba(59, 130, 246, 0.14), transparent 55%);
+			radial-gradient(circle at top left, rgba(37, 211, 102, 0.14), transparent 35%),
+			radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.08), transparent 35%),
+			#ffffff;
 	}
 
-	.hero-inner {
+	.hero-container {
 		display: grid;
 		grid-template-columns: 1.05fr 0.95fr;
-		gap: 34px;
 		align-items: center;
+		gap: 60px;
 	}
 
-	.copy {
-		max-width: 560px;
+	.hero-copy {
+		max-width: 620px;
 	}
 
-	.cta-row {
-		display: flex;
-		gap: 12px;
-		margin-top: 22px;
-		flex-wrap: wrap;
-	}
-
-	.trust-row {
-		display: flex;
-		gap: 10px;
-		margin-top: 18px;
-		flex-wrap: wrap;
-	}
-
-	.visual {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	.mock {
-		width: min(520px, 100%);
-		border-radius: 20px;
-		border: 1px solid var(--border);
-		background: var(--surface);
-		box-shadow: var(--shadow-md);
-		overflow: hidden;
-	}
-
-	.mock-top {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		padding: 12px 14px;
-		border-bottom: 1px solid var(--border);
-	}
-
-	.dots {
+	.hero-badge {
 		display: inline-flex;
+		align-items: center;
+		padding: 10px 18px;
+		border-radius: 999px;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-size: 14px;
+		font-weight: 800;
+		margin-bottom: 24px;
+	}
+
+	.hero-title {
+		font-size: clamp(54px, 7vw, 84px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.hero-title span {
+		display: block;
+		color: #0f172a;
+		opacity: 0.72;
+	}
+
+	.hero-description {
+		margin-top: 26px;
+		font-size: 20px;
+		line-height: 1.75;
+		color: #475569;
+		max-width: 620px;
+		font-weight: 500;
+	}
+
+	.hero-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin-top: 34px;
+		flex-wrap: wrap;
+	}
+
+	.hero-btn {
+		height: 58px;
+		padding: 0 28px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: all 0.25s ease;
+	}
+
+	.hero-btn-primary {
+		background: #22c55e;
+		color: white;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.28);
+	}
+
+	.hero-btn-primary:hover {
+		transform: translateY(-2px);
+		background: #16a34a;
+	}
+
+	.hero-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	.hero-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.hero-trust {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 14px;
+		margin-top: 28px;
+	}
+
+	.trust-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #475569;
+		padding: 10px 16px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.75);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+	}
+
+	.trust-item span {
+		color: #22c55e;
+		font-weight: 900;
+	}
+
+	.hero-visual {
+		display: flex;
+		justify-content: center;
+	}
+
+	.mockup {
+		width: 100%;
+		max-width: 560px;
+		background: rgba(255, 255, 255, 0.9);
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		border-radius: 30px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 25px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.mockup-header {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 16px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.mockup-dots {
+		display: flex;
 		gap: 6px;
 	}
 
-	.dots span {
+	.mockup-dots span {
 		width: 8px;
 		height: 8px;
 		border-radius: 999px;
-		background: rgba(100, 116, 139, 0.35);
+		background: rgba(100, 116, 139, 0.4);
 	}
 
-	.mock-url {
-		font-size: 12px;
-		color: var(--muted);
-		border: 1px solid var(--border);
-		padding: 6px 10px;
-		border-radius: 999px;
+	.mockup-url {
 		flex: 1;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	.mock-body {
-		padding: 16px;
-	}
-
-	.mock-hero {
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
 		display: flex;
 		align-items: center;
-		gap: 12px;
-		padding: 14px;
-		border-radius: var(--radius-md);
-		background: linear-gradient(180deg, rgba(37, 211, 102, 0.14), rgba(59, 130, 246, 0.06));
-		border: 1px solid rgba(37, 211, 102, 0.18);
-	}
-
-	.mock-avatar {
-		width: 44px;
-		height: 44px;
-		border-radius: 14px;
-		background: linear-gradient(180deg, var(--brand), var(--brand-strong));
-	}
-
-	.mock-title {
-		font-weight: 800;
-		letter-spacing: -0.02em;
-	}
-
-	.mock-sub {
+		padding: 0 14px;
 		font-size: 13px;
-		color: var(--muted);
-		margin-top: 2px;
+		color: #64748b;
+		font-weight: 600;
 	}
 
-	.mock-grid {
+	.mockup-body {
+		padding: 22px;
+	}
+
+	.mockup-store {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 18px;
+		border-radius: 22px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.14),
+				rgba(59, 130, 246, 0.04)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.12);
+	}
+
+	.mockup-store-avatar {
+		width: 52px;
+		height: 52px;
+		border-radius: 18px;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+	}
+
+	.mockup-store-title {
+		font-size: 20px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.mockup-store-subtitle {
+		margin-top: 4px;
+		font-size: 14px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.mockup-products {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 12px;
-		margin-top: 14px;
+		gap: 16px;
+		margin-top: 20px;
 	}
 
-	.mock-card {
-		border-radius: 14px;
-		border: 1px solid var(--border);
-		padding: 12px;
-		background: var(--surface);
+	.product-card {
+		background: white;
+		border-radius: 20px;
+		padding: 14px;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 8px 25px rgba(15, 23, 42, 0.03);
 	}
 
-	.mock-img {
+	.product-card img {
 		width: 100%;
-		height: 78px;
+		height: 110px;
 		object-fit: cover;
-		border-radius: 12px;
-		border: 1px solid var(--border);
-		background: rgba(229, 231, 235, 0.04);
+		border-radius: 16px;
 	}
 
-	.mock-row {
+	.product-row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 10px;
-		font-size: 13px;
-	}
-
-	.mock-name {
-		color: var(--muted);
-		font-weight: 650;
-	}
-
-	.mock-price {
-		font-weight: 800;
-	}
-
-	.mock-btn {
-		margin-top: 10px;
-		padding: 10px 12px;
-		text-align: center;
-		border-radius: 12px;
-		background: rgba(37, 211, 102, 0.12);
-		color: var(--brand);
-		font-weight: 800;
-		font-size: 13px;
-		border: 1px solid rgba(37, 211, 102, 0.18);
-	}
-
-	.mock-checkout {
 		margin-top: 14px;
-		border-top: 1px solid var(--border);
-		padding-top: 14px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #0f172a;
 	}
 
-	.mock-total {
-		display: flex;
-		justify-content: space-between;
-		font-weight: 800;
-	}
-
-	.mock-whatsapp {
-		margin-top: 10px;
-		padding: 12px 12px;
+	.product-card button {
+		width: 100%;
+		height: 42px;
+		margin-top: 12px;
+		border: none;
 		border-radius: 14px;
-		background: linear-gradient(180deg, var(--brand), var(--brand-strong));
-		color: #fff;
-		font-weight: 850;
-		text-align: center;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-weight: 800;
+		cursor: pointer;
+		transition: 0.25s ease;
 	}
 
-	@media (max-width: 920px) {
-		.hero {
-			padding: 54px 0 18px;
+	.product-card button:hover {
+		background: rgba(37, 211, 102, 0.18);
+	}
+
+	.mockup-footer {
+		margin-top: 22px;
+		padding-top: 20px;
+		border-top: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.mockup-total {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.mockup-whatsapp {
+		margin-top: 16px;
+		height: 56px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		font-size: 16px;
+		font-weight: 900;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	@media (max-width: 1100px) {
+		.hero-container {
+			grid-template-columns: 1fr;
+			gap: 50px;
 		}
 
-		.hero-inner {
+		.hero-copy {
+			max-width: 100%;
+		}
+
+		.hero-visual {
+			justify-content: flex-start;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 70px 0 40px;
+		}
+
+		.hero-title {
+			font-size: 54px;
+			line-height: 0.98;
+		}
+
+		.hero-description {
+			font-size: 18px;
+		}
+
+		.mockup-products {
 			grid-template-columns: 1fr;
 		}
+	}
 
-		.visual {
-			justify-content: flex-start;
+	@media (max-width: 520px) {
+		.hero-title {
+			font-size: 42px;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.hero-btn {
+			width: 100%;
+		}
+
+		.hero-trust {
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 </style>

@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/sections/Header.astro";
+import Footer from "../../components/sections/Footer.astro";
+import FinalCTA from "../../components/sections/FinalCTA.astro";
+import { SITE, canonicalUrl } from "../../lib/site";
+
+const canonical = canonicalUrl("/blog/como-crear-catalogo-digital/");
+const title = "Cómo crear un catálogo digital | Pedidos Web";
+const description =
+	"Aprende a crear un catálogo digital para WhatsApp: qué incluir, fotos, precios, categorías, link para compartir y cómo recibir pedidos con total.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container content">
+				<span class="eyebrow">Blog</span>
+				<h1 class="h1">Cómo crear un catálogo digital para WhatsApp</h1>
+				<p class="lead">
+					Un catálogo digital te ahorra tiempo y aumenta cierres: en vez de explicar por chat, tu cliente ve todo en un link y te manda el
+					pedido listo.
+				</p>
+
+				<h2 class="h2">Qué debe tener un catálogo para vender más</h2>
+				<ul class="list">
+					<li>Fotos claras (misma luz y fondo cuando sea posible)</li>
+					<li>Nombre del producto + precio visible</li>
+					<li>Descripción corta: qué incluye y para quién es</li>
+					<li>Opciones: talla, color, sabor</li>
+					<li>Disponibilidad/stock (si aplica)</li>
+				</ul>
+
+				<h2 class="h2">Cómo organizarlo (categorías que convierten)</h2>
+				<p>
+					La clave no es tener “muchos productos”, sino que se encuentren rápido. Divide en categorías simples: Nuevos, Más vendidos, Combos,
+					Postres, Bebidas, Accesorios, etc.
+				</p>
+
+				<h2 class="h2">El truco: un solo link para compartir</h2>
+				<p>
+					Lo que más convierte es el link único: lo pones en Instagram, Facebook, estados y en tus mensajes. Así no dependes de mandar fotos
+					y el cliente puede elegir sin preguntarte uno por uno.
+				</p>
+
+				<h2 class="h2">Catálogo vs vender “solo por chat”</h2>
+				<ul class="list">
+					<li>Chat: preguntas repetidas → demoras</li>
+					<li>Catálogo: información clara → pedido más rápido</li>
+					<li>Catálogo + carrito: pedido con total → listo para cobrar</li>
+				</ul>
+
+				<h2 class="h2">Cómo hacerlo con Pedidos Web</h2>
+				<p>
+					Con Pedidos Web creas tu catálogo online en minutos, subes fotos y precios, y compartes tu enlace. El cliente arma el pedido y te
+					llega por WhatsApp con detalle y total.
+				</p>
+
+				<div class="cta">
+					<a class="btn btn-primary" href="/demo/">Ver demo</a>
+					<a class="btn btn-secondary" href="/tienda-online-para-whatsapp/">Tienda online para WhatsApp</a>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.content {
+		max-width: 920px;
+	}
+
+	.content p {
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.list {
+		margin: 10px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.cta {
+		margin-top: 18px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+</style>

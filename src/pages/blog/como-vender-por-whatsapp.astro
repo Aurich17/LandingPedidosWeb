@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/sections/Header.astro";
+import Footer from "../../components/sections/Footer.astro";
+import FinalCTA from "../../components/sections/FinalCTA.astro";
+import { SITE, canonicalUrl } from "../../lib/site";
+
+const canonical = canonicalUrl("/blog/como-vender-por-whatsapp/");
+const title = "Cómo vender por WhatsApp | Pedidos Web";
+const description =
+	"Cómo vender por WhatsApp paso a paso: link en bio, catálogo, respuestas rápidas, seguimiento y cómo recibir pedidos con detalle y total.";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+	<Header appUrl={SITE.appUrl} />
+	<main>
+		<section class="section">
+			<div class="container content">
+				<span class="eyebrow">Blog</span>
+				<h1 class="h1">Cómo vender por WhatsApp y aumentar cierres</h1>
+				<p class="lead">
+					WhatsApp es el canal donde cierran la mayoría de ventas en redes. La diferencia entre vender “a ratos” y vender todos los días es
+					tener un flujo claro: catálogo, pedido y cobro.
+				</p>
+
+				<h2 class="h2">1) Ten un link de catálogo (no solo fotos)</h2>
+				<p>
+					Si tu cliente tiene que preguntar precio y tú tienes que buscar fotos, la venta se enfría. Un catálogo para WhatsApp con link reduce
+					preguntas y acelera decisiones.
+				</p>
+				<p>
+					Página recomendada:
+					<a class="link" href="/catalogo-para-whatsapp/">catálogo para WhatsApp</a>.
+				</p>
+
+				<h2 class="h2">2) Usa un mensaje de bienvenida que guíe</h2>
+				<ul class="list">
+					<li>“Hola, gracias por escribir. Aquí está el catálogo: (link)”</li>
+					<li>“Elige tus productos y al final te llega el total”</li>
+					<li>“Si necesitas ayuda, dime qué buscas y tu distrito”</li>
+				</ul>
+
+				<h2 class="h2">3) Respuestas rápidas para objeciones</h2>
+				<p class="muted">
+					Precio, envío, tiempos, stock y formas de pago son lo que más se repite. Ten respuestas guardadas y confirma el pedido en 3 mensajes
+					o menos.
+				</p>
+
+				<h2 class="h2">4) El flujo que más convierte: catálogo → carrito → WhatsApp</h2>
+				<p>
+					La mejor experiencia es cuando el cliente arma el pedido, y a ti te llega un mensaje con productos, cantidades, notas y total. Así
+					puedes pasar directo a cobrar y coordinar entrega.
+				</p>
+				<p>
+					Prueba el flujo aquí:
+					<a class="link" href="/demo/">demo de Pedidos Web</a>.
+				</p>
+
+				<h2 class="h2">5) Seguimiento sin spamear</h2>
+				<ul class="list">
+					<li>Si preguntó precio: “¿Te separo? Tengo delivery hoy.”</li>
+					<li>Si dejó el pedido a medias: “¿Quieres que te recomiende un combo?”</li>
+					<li>Si ya compró: “¿Cómo te fue? Te dejo el link para tu próxima compra.”</li>
+				</ul>
+
+				<h2 class="h2">Por qué Pedidos Web ayuda</h2>
+				<p>
+					Pedidos Web convierte tu WhatsApp en un sistema de pedidos: catálogo online, link para compartir, y pedidos con detalle y total para
+					cobrar rápido.
+				</p>
+
+				<div class="cta">
+					<a class="btn btn-primary" href={SITE.appUrl}>Crear mi tienda</a>
+					<a class="btn btn-secondary" href="/precios/">Ver precios</a>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	.content {
+		max-width: 920px;
+	}
+
+	.content p {
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.list {
+		margin: 10px 0 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 8px;
+		color: var(--muted);
+		font-weight: 600;
+	}
+
+	.link {
+		color: var(--text);
+		font-weight: 900;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.cta {
+		margin-top: 18px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+</style>

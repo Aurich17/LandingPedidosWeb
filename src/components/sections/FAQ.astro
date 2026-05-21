@@ -1,82 +1,260 @@
-<section id="faq" class="section">
+---
+const faqs = [
+	{
+		q: "¿Necesito saber de tecnología?",
+		a: "No. Solo subes tus productos, precios y compartes tu enlace. Está pensado para negocios pequeños, emprendedores y ventas por WhatsApp.",
+	},
+	{
+		q: "¿Cómo llegan los pedidos?",
+		a: "Tus clientes seleccionan productos y el pedido llega directamente a tu WhatsApp con el detalle y el total listo para cobrar.",
+	},
+	{
+		q: "¿Puedo usar mi número actual de WhatsApp?",
+		a: "Sí. Los pedidos llegan a tu WhatsApp de siempre, no necesitas cambiar de número.",
+	},
+	{
+		q: "¿Mi tienda tendrá un enlace propio?",
+		a: "Sí. Tendrás tu propio subdominio para compartir en redes sociales, WhatsApp o estados.",
+	},
+	{
+		q: "¿Puedo empezar gratis?",
+		a: "Sí. Puedes crear tu tienda gratis y empezar a recibir pedidos en minutos.",
+	},
+	{
+		q: "¿Qué incluye el plan Pro?",
+		a: "El plan Pro desbloquea productos ilimitados, personalización avanzada, pedidos ilimitados y una experiencia más profesional para tu negocio.",
+	},
+	{
+		q: "¿Cómo paga el cliente?",
+		a: "El cliente te envía el pedido por WhatsApp y tú coordinas el pago mediante Yape, Plin, transferencia, efectivo o el método que prefieras.",
+	},
+	{
+		q: "¿Puedo editar productos y precios cuando quiera?",
+		a: "Sí. Puedes actualizar tu catálogo en cualquier momento desde tu panel.",
+	},
+	{
+		q: "¿Funciona desde celular?",
+		a: "Sí. Tanto tu tienda como el panel están optimizados para celulares y tablets.",
+	},
+];
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faqs.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: item.a,
+		},
+	})),
+};
+
+const schemaJson = JSON.stringify(schema);
+---
+
+<section id="faq" class="faq-section">
 	<div class="container">
-		<div class="head">
-			<span class="eyebrow">FAQ</span>
-			<h2 class="h2">Preguntas frecuentes</h2>
-			<p class="lead">Respuestas rápidas para que puedas empezar con confianza.</p>
+		<script
+			type="application/ld+json"
+			set:html={schemaJson}
+		></script>
+
+		<div class="faq-head">
+			<h2 class="faq-title">
+				Todo lo que necesitas para empezar a vender por WhatsApp
+			</h2>
+
+			<p class="faq-subtitle">
+				Respuestas rápidas sobre cómo funciona PedidosWeb y cómo puedes empezar a recibir pedidos online.
+			</p>
 		</div>
 
-		<div class="faq">
-			<details class="qa" open>
-				<summary>¿Necesito saber de tecnología?</summary>
-				<p>No. Solo subes fotos, precios y listo. Está pensado para emprendedores y tiendas pequeñas.</p>
-			</details>
+		<div class="faq-grid">
+			{faqs.map((item, idx) => (
+				<details class="faq-card" open={idx === 0}>
+					<summary>
+						<span>{item.q}</span>
 
-			<details class="qa">
-				<summary>¿Puedo usar mi número de WhatsApp actual?</summary>
-				<p>Sí. Recibes los pedidos en tu WhatsApp de siempre.</p>
-			</details>
+						<div class="faq-icon">
+							+
+						</div>
+					</summary>
 
-			<details class="qa">
-				<summary>¿Mi tienda tendrá su propio enlace?</summary>
-				<p>Sí. Tendrás un link fácil de compartir en tus redes y en tu WhatsApp.</p>
-			</details>
-
-			<details class="qa">
-				<summary>¿Cómo paga el cliente?</summary>
-				<p>El pedido llega a tu WhatsApp con el detalle y el total. Tú coordinas el pago (Yape, Plin, transferencia o efectivo).</p>
-			</details>
-
-			<details class="qa">
-				<summary>¿Hay plan gratis?</summary>
-				<p>No. Puedes ver la demo para entender el flujo antes de crear tu tienda.</p>
-			</details>
-
-			<details class="qa">
-				<summary>¿Puedo cambiar productos y precios cuando quiera?</summary>
-				<p>Sí, puedes editar tu catálogo en cualquier momento.</p>
-			</details>
-
-			<details class="qa">
-				<summary>¿Funciona en celular?</summary>
-				<p>Sí. La tienda está optimizada para que tus clientes compren desde el teléfono.</p>
-			</details>
+					<div class="faq-answer">
+						<p>{item.a}</p>
+					</div>
+				</details>
+			))}
 		</div>
 	</div>
 </section>
 
 <style>
-	.head {
+	.faq-section {
+		position: relative;
+		padding: 110px 0;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.08),
+				transparent 35%
+			),
+			linear-gradient(
+				to bottom,
+				#ffffff,
+				#f8fafc
+			);
+	}
+
+	.faq-head {
 		max-width: 820px;
+		margin: 0 auto 60px;
+		text-align: center;
 	}
 
-	.faq {
-		margin-top: 18px;
+	.faq-badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px 18px;
+		border-radius: 999px;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-size: 14px;
+		font-weight: 800;
+		margin-bottom: 22px;
+	}
+
+	.faq-title {
+		font-size: clamp(38px, 5vw, 62px);
+		line-height: 1;
+		font-weight: 950;
+		letter-spacing: -0.05em;
+		color: #0f172a;
+	}
+
+	.faq-subtitle {
+		margin-top: 22px;
+		font-size: 18px;
+		line-height: 1.8;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 720px;
+		margin-inline: auto;
+	}
+
+	.faq-grid {
 		display: grid;
-		gap: 12px;
+		gap: 18px;
+		max-width: 920px;
+		margin: 0 auto;
 	}
 
-	.qa {
-		border: 1px solid var(--border);
-		border-radius: var(--radius-md);
-		background: var(--surface);
-		box-shadow: var(--shadow-sm);
-		padding: 14px 16px;
+	.faq-card {
+		background: rgba(255, 255, 255, 0.9);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 24px;
+		overflow: hidden;
+		backdrop-filter: blur(10px);
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.04);
+		transition: 0.25s ease;
+	}
+
+	.faq-card:hover {
+		transform: translateY(-2px);
+		box-shadow:
+			0 20px 40px rgba(15, 23, 42, 0.06);
 	}
 
 	summary {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 24px 28px;
 		cursor: pointer;
-		font-weight: 900;
+		font-size: 18px;
+		font-weight: 850;
+		color: #0f172a;
 		letter-spacing: -0.02em;
 	}
 
-	summary::marker {
-		color: var(--brand);
+	summary::-webkit-details-marker {
+		display: none;
 	}
 
-	p {
-		margin: 10px 0 0;
-		color: var(--muted);
-		font-weight: 600;
+	.faq-icon {
+		min-width: 34px;
+		width: 34px;
+		height: 34px;
+		border-radius: 999px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(37, 211, 102, 0.10);
+		color: #16a34a;
+		font-size: 20px;
+		font-weight: 900;
+		transition: 0.25s ease;
+	}
+
+	details[open] .faq-icon {
+		transform: rotate(45deg);
+		background: rgba(37, 211, 102, 0.16);
+	}
+
+	.faq-answer {
+		padding: 0 28px 26px;
+	}
+
+	.faq-answer p {
+		font-size: 16px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 760px;
+	}
+
+	@media (max-width: 768px) {
+		.faq-section {
+			padding: 80px 0;
+		}
+
+		.faq-title {
+			font-size: 42px;
+		}
+
+		summary {
+			padding: 22px;
+			font-size: 17px;
+		}
+
+		.faq-answer {
+			padding: 0 22px 22px;
+		}
+
+		.faq-answer p {
+			font-size: 15px;
+			line-height: 1.8;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.faq-title {
+			font-size: 36px;
+		}
+
+		.faq-subtitle {
+			font-size: 16px;
+		}
+
+		summary {
+			font-size: 16px;
+			padding: 20px;
+		}
 	}
 </style>
