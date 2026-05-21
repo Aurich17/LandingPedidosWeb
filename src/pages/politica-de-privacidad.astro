@@ -1,91 +1,570 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Footer from "../components/sections/Footer.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
-const canonical = canonicalUrl("/politica-de-privacidad/");
-const title = "Política de Privacidad | Pedidos Web";
+const canonical =
+	canonicalUrl("/politica-de-privacidad/");
+
+const title =
+	"Política de Privacidad | PedidosWeb";
+
 const description =
-	"Política de privacidad de Pedidos Web. Explica qué datos se recopilan, para qué se usan y cómo puedes contactarnos por WhatsApp para consultas.";
+	"Conoce la política de privacidad de PedidosWeb y cómo protegemos la información de nuestros usuarios y tiendas online.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
+
 	<main>
-		<section class="section">
-			<div class="container content">
-				<span class="eyebrow">Legal</span>
-				<h1 class="h1">Política de Privacidad</h1>
-				<p class="muted">Última actualización: {new Date().toISOString().slice(0, 10)}</p>
+		<!-- HERO -->
+		<section class="privacy-hero">
+			<div class="container">
+				<div class="privacy-layout">
+					<div class="privacy-copy">
+						<div class="privacy-label">
+							Legal
+						</div>
 
-				<h2 class="h2">1. Información que recopilamos</h2>
-				<p>
-					Podemos recopilar información que tú nos proporcionas al crear una cuenta o usar el servicio, como nombre del negocio, número de
-					WhatsApp, catálogo de productos (nombres, precios, fotos) y configuración de la tienda. También podemos recopilar datos técnicos
-					básicos para mejorar el rendimiento y la seguridad del sitio.
-				</p>
+						<h1 class="privacy-title">
+							Política de Privacidad
+						</h1>
 
-				<h2 class="h2">2. Cómo usamos la información</h2>
-				<ul class="list">
-					<li>Para crear y mostrar tu tienda y tu catálogo online.</li>
-					<li>Para generar el mensaje de pedido con detalle y total que se envía por WhatsApp.</li>
-					<li>Para soporte, mejora del producto, seguridad y prevención de abuso.</li>
-				</ul>
+						<p class="privacy-description">
+							En PedidosWeb nos tomamos en serio la privacidad y protección de la información de nuestros usuarios.
+						</p>
 
-				<h2 class="h2">3. Compartir información</h2>
-				<p>
-					No vendemos tu información. La tienda que creas está pensada para ser pública para tus clientes (productos y precios), mientras que
-					tus datos de administración se mantienen privados. En ciertos casos, podemos usar proveedores de infraestructura para operar el
-					servicio, siempre con fines operativos.
-				</p>
+						<div class="privacy-updated">
+							Última actualización:
+							<strong>{new Date().toISOString().slice(0, 10)}</strong>
+						</div>
+					</div>
 
-				<h2 class="h2">4. Cookies</h2>
-				<p>
-					Podemos usar cookies o tecnologías similares para mantener sesiones y mejorar la experiencia. Puedes controlar cookies desde la
-					configuración de tu navegador.
-				</p>
+					<div class="privacy-preview">
+						<div class="privacy-window">
+							<div class="privacy-window-top">
+								<div class="privacy-window-dots">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
 
-				<h2 class="h2">5. Seguridad</h2>
-				<p>
-					Aplicamos medidas razonables para proteger la información. Aun así, ningún sistema es 100% infalible. Recomendamos usar contraseñas
-					seguras y proteger el acceso a tus cuentas.
-				</p>
+								<div class="privacy-window-url">
+									pedidosweb.shop/privacy
+								</div>
+							</div>
 
-				<h2 class="h2">6. Contacto</h2>
-				<p>
-					Si tienes dudas sobre esta política, contáctanos por WhatsApp:
-					<a class="link" href={SITE.whatsappUrl} target="_blank" rel="noopener">{SITE.contactPhoneDisplay}</a>.
-				</p>
+							<div class="privacy-window-body">
+								<div class="privacy-card">
+									<div class="privacy-icon">
+										🔒
+									</div>
+
+									<div>
+										<h3>
+											Protección de datos
+										</h3>
+
+										<p>
+											Aplicamos medidas razonables para proteger la información de nuestros usuarios.
+										</p>
+									</div>
+								</div>
+
+								<div class="privacy-card">
+									<div class="privacy-icon">
+										📦
+									</div>
+
+									<div>
+										<h3>
+											Información del catálogo
+										</h3>
+
+										<p>
+											Tus productos y precios son públicos solo para mostrar tu tienda.
+										</p>
+									</div>
+								</div>
+
+								<div class="privacy-card">
+									<div class="privacy-icon">
+										⚡
+									</div>
+
+									<div>
+										<h3>
+											Uso del servicio
+										</h3>
+
+										<p>
+											La información se usa para operar y mejorar PedidosWeb.
+										</p>
+									</div>
+								</div>
+
+								<div class="privacy-note">
+									Tu privacidad es importante para nosotros.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CONTENT -->
+		<section class="privacy-content-section">
+			<div class="container">
+				<div class="privacy-content">
+					<div class="privacy-block">
+						<h2>
+							1. Información que recopilamos
+						</h2>
+
+						<p>
+							Podemos recopilar información que proporcionas al crear una cuenta o utilizar el servicio, como el nombre del negocio, número de WhatsApp, productos, precios, imágenes y configuración de la tienda.
+						</p>
+
+						<p>
+							También podemos recopilar información técnica básica para mejorar el rendimiento, estabilidad y seguridad de la plataforma.
+						</p>
+					</div>
+
+					<div class="privacy-block">
+						<h2>
+							2. Cómo usamos la información
+						</h2>
+
+						<div class="privacy-list">
+							<div class="privacy-list-item">
+								<span>✔</span>
+								Crear y mostrar tu tienda online
+							</div>
+
+							<div class="privacy-list-item">
+								<span>✔</span>
+								Generar pedidos con detalle y total
+							</div>
+
+							<div class="privacy-list-item">
+								<span>✔</span>
+								Mejorar el producto y soporte técnico
+							</div>
+
+							<div class="privacy-list-item">
+								<span>✔</span>
+								Prevenir abuso y proteger la plataforma
+							</div>
+						</div>
+					</div>
+
+					<div class="privacy-block">
+						<h2>
+							3. Compartir información
+						</h2>
+
+						<p>
+							No vendemos información personal. Los productos y precios publicados en tu tienda son visibles para tus clientes, mientras que la información administrativa permanece privada.
+						</p>
+
+						<p>
+							Podemos utilizar proveedores de infraestructura y servicios tecnológicos para operar PedidosWeb de manera segura y estable.
+						</p>
+					</div>
+
+					<div class="privacy-block">
+						<h2>
+							4. Cookies y tecnologías similares
+						</h2>
+
+						<p>
+							Podemos utilizar cookies para mantener sesiones, recordar preferencias y mejorar la experiencia de navegación.
+						</p>
+
+						<p>
+							Puedes controlar las cookies desde la configuración de tu navegador.
+						</p>
+					</div>
+
+					<div class="privacy-block">
+						<h2>
+							5. Seguridad
+						</h2>
+
+						<p>
+							Aplicamos medidas razonables para proteger la información almacenada en la plataforma. Sin embargo, ningún sistema es completamente infalible.
+						</p>
+
+						<p>
+							Recomendamos utilizar contraseñas seguras y mantener protegido el acceso a tus cuentas.
+						</p>
+					</div>
+
+					<div class="privacy-contact">
+						<div class="privacy-contact-copy">
+							<h2>
+								¿Tienes dudas sobre esta política?
+							</h2>
+
+							<p>
+								Si necesitas más información o tienes preguntas relacionadas con privacidad, puedes contactarnos por WhatsApp.
+							</p>
+						</div>
+
+						<a
+							class="privacy-contact-btn"
+							href={SITE.whatsappUrl}
+							target="_blank"
+							rel="noopener"
+						>
+							{SITE.contactPhoneDisplay}
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
+
 	<Footer />
 </BaseLayout>
 
 <style>
-	.content {
-		max-width: 900px;
+	.privacy-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
 	}
 
-	.content p {
-		color: var(--muted);
-		font-weight: 600;
-	}
-
-	.list {
-		margin: 10px 0 0;
-		padding-left: 18px;
+	.privacy-layout {
 		display: grid;
-		gap: 8px;
-		color: var(--muted);
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
+	}
+
+	.privacy-label {
+		width: fit-content;
+		padding: 10px 16px;
+		border-radius: 999px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(37, 211, 102, 0.04)
+			);
+		color: #16a34a;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0.02em;
+	}
+
+	.privacy-title {
+		margin-top: 26px;
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.privacy-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.privacy-updated {
+		margin-top: 28px;
+		font-size: 15px;
+		color: #64748b;
 		font-weight: 600;
 	}
 
-	.link {
-		color: var(--text);
+	.privacy-updated strong {
+		color: #0f172a;
+	}
+
+	.privacy-preview {
+		display: flex;
+		justify-content: center;
+	}
+
+	.privacy-window {
+		width: 100%;
+		max-width: 560px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.privacy-window-top {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.privacy-window-dots {
+		display: flex;
+		gap: 6px;
+	}
+
+	.privacy-window-dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.4);
+	}
+
+	.privacy-window-url {
+		flex: 1;
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		font-size: 13px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.privacy-window-body {
+		padding: 22px;
+	}
+
+	.privacy-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+		padding: 22px;
+		border-radius: 24px;
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		margin-bottom: 16px;
+	}
+
+	.privacy-icon {
+		width: 56px;
+		height: 56px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 26px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.14),
+				rgba(37, 211, 102, 0.06)
+			);
+	}
+
+	.privacy-card h3 {
+		font-size: 20px;
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		color: #0f172a;
+	}
+
+	.privacy-card p {
+		margin-top: 8px;
+		color: #64748b;
+		line-height: 1.8;
+		font-weight: 500;
+	}
+
+	.privacy-note {
+		margin-top: 10px;
+		padding: 18px;
+		border-radius: 20px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.10),
+				rgba(37, 211, 102, 0.04)
+			);
+		font-size: 15px;
+		font-weight: 700;
+		color: #16a34a;
+		text-align: center;
+	}
+
+	.privacy-content-section {
+		padding: 90px 0;
+	}
+
+	.privacy-content {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.privacy-block {
+		padding: 38px;
+		border-radius: 30px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 12px 35px rgba(15, 23, 42, 0.04);
+		margin-bottom: 24px;
+	}
+
+	.privacy-block h2,
+	.privacy-contact-copy h2 {
+		font-size: 36px;
+		line-height: 1;
+		font-weight: 900;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.privacy-block p,
+	.privacy-contact-copy p {
+		margin-top: 16px;
+		color: #64748b;
+		line-height: 1.9;
+		font-weight: 500;
+		font-size: 16px;
+	}
+
+	.privacy-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 22px;
+	}
+
+	.privacy-list-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.privacy-list-item span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.privacy-contact {
+		padding: 40px;
+		border-radius: 34px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(255, 255, 255, 0.92)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.14);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+		margin-top: 40px;
+	}
+
+	.privacy-contact-btn {
+		height: 56px;
+		padding: 0 26px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		font-size: 15px;
 		font-weight: 800;
-		text-decoration: underline;
-		text-underline-offset: 3px;
+		text-decoration: none;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	@media (max-width: 1100px) {
+		.privacy-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.privacy-hero {
+			padding: 80px 0 50px;
+		}
+
+		.privacy-title {
+			font-size: 44px;
+		}
+
+		.privacy-description {
+			font-size: 16px;
+		}
+
+		.privacy-block h2,
+		.privacy-contact-copy h2 {
+			font-size: 30px;
+		}
+
+		.privacy-contact {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.privacy-title {
+			font-size: 38px;
+		}
+
+		.privacy-block {
+			padding: 28px;
+		}
+
+		.privacy-contact {
+			padding: 28px;
+		}
+
+		.privacy-contact-btn {
+			width: 100%;
+		}
 	}
 </style>

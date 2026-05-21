@@ -1,85 +1,658 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Footer from "../components/sections/Footer.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
-const canonical = canonicalUrl("/contacto/");
-const title = "Contacto | Pedidos Web";
+const canonical =
+	canonicalUrl("/contacto/");
+
+const title =
+	"Contacto | PedidosWeb";
+
 const description =
-	"Contacto de Pedidos Web. Escríbenos por WhatsApp y te ayudamos a crear tu catálogo online, probar la demo y configurar tu tienda para recibir pedidos.";
+	"Habla con PedidosWeb por WhatsApp. Resolvemos dudas, demos y ayuda para configurar tu tienda online.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
-	<main>
-		<section class="section">
-			<div class="container">
-				<span class="eyebrow">Contacto</span>
-				<h1 class="h1">Habla con Pedidos Web</h1>
-				<p class="lead">
-					Si quieres una demo guiada, ayuda para configurar tu tienda o tienes preguntas sobre precios, escríbenos por WhatsApp.
-				</p>
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
 
-				<div class="grid grid--2 mt-24">
-					<div class="card">
-						<h2 class="h3">WhatsApp</h2>
-						<p class="muted">Respuesta rápida. Soporte para Perú y otros países.</p>
-						<a class="btn btn-primary mt-16" href={SITE.whatsappUrl} target="_blank" rel="noopener">
-							Escribir al {SITE.contactPhoneDisplay}
-						</a>
+	<main>
+		<!-- HERO -->
+		<section class="contact-hero">
+			<div class="container">
+				<div class="contact-layout">
+					<div class="contact-copy">
+						<h1 class="contact-title">
+							Hablemos sobre tu tienda online para WhatsApp
+						</h1>
+
+						<p class="contact-description">
+							Si tienes dudas, quieres una demo o necesitas ayuda para empezar, puedes escribirnos directamente por WhatsApp.
+						</p>
+
+						<div class="contact-points">
+							<div class="contact-point">
+								<span>✔</span>
+								Respuesta rápida
+							</div>
+
+							<div class="contact-point">
+								<span>✔</span>
+								Soporte para Perú y otros países
+							</div>
+
+							<div class="contact-point">
+								<span>✔</span>
+								Ayuda para configurar tu tienda
+							</div>
+						</div>
+
+						<div class="contact-actions">
+							<a
+								class="contact-btn contact-btn-primary"
+								href={SITE.whatsappUrl}
+								target="_blank"
+								rel="noopener"
+							>
+								Escribir al WhatsApp
+							</a>
+
+							<a
+								class="contact-btn contact-btn-secondary"
+								href={SITE.demoUrl}
+								target="_blank"
+								rel="noopener"
+							>
+								Ver tienda demo
+							</a>
+						</div>
 					</div>
-					<div class="card">
-						<h2 class="h3">Enlaces útiles</h2>
-						<ul class="links">
-							<li><a href="/demo/">Ver demo</a></li>
-							<li><a href="/precios/">Ver precios</a></li>
-							<li><a href="/catalogo-para-whatsapp/">Catálogo para WhatsApp</a></li>
-							<li><a href="/tienda-online-para-whatsapp/">Tienda online para WhatsApp</a></li>
-							<li><a href="/recibir-pedidos-por-whatsapp/">Recibir pedidos por WhatsApp</a></li>
-						</ul>
+
+					<div class="contact-preview">
+						<div class="chat-window">
+							<div class="chat-header">
+								<div class="chat-avatar"></div>
+
+								<div>
+									<div class="chat-name">
+										PedidosWeb
+									</div>
+
+									<div class="chat-status">
+										Normalmente responde rápido
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-body">
+								<div class="chat-message incoming">
+									Hola 👋 quiero información sobre PedidosWeb
+								</div>
+
+								<div class="chat-message outgoing">
+									Claro 😄 ¿Qué tipo de negocio tienes?
+								</div>
+
+								<div class="chat-card">
+									<div class="chat-card-title">
+										Información útil
+									</div>
+
+									<div class="chat-card-item">
+										<span>✔</span>
+										Demo guiada
+									</div>
+
+									<div class="chat-card-item">
+										<span>✔</span>
+										Soporte de configuración
+									</div>
+
+									<div class="chat-card-item">
+										<span>✔</span>
+										Planes y precios
+									</div>
+
+									<div class="chat-card-item">
+										<span>✔</span>
+										Ayuda para publicar productos
+									</div>
+								</div>
+
+								<div class="chat-message incoming">
+									Perfecto 👍 también puedo mostrarte cómo funciona la tienda demo.
+								</div>
+							</div>
+
+							<div class="chat-footer">
+								<div class="chat-input">
+									Escribe un mensaje...
+								</div>
+							</div>
+						</div>
+
+						<div class="floating-box">
+							{SITE.contactPhoneDisplay}
+						</div>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<div class="mt-24">
-					<h2 class="h2">Qué información enviar</h2>
-					<p class="muted">
-						Para ayudarte más rápido, envíanos: tipo de negocio (ropa, comida, cosmética, etc.), ciudad, si ya vendes por Instagram y
-						tu idea de precios/planes.
-					</p>
+		<!-- LINKS -->
+		<section class="links-section">
+			<div class="container">
+				<div class="links-grid">
+					<a
+						class="link-card"
+						href="/catalogo-para-whatsapp/"
+					>
+						<div class="link-icon">
+							🔗
+						</div>
+
+						<div>
+							<h3>
+								Catálogo para WhatsApp
+							</h3>
+
+							<p>
+								Crea un catálogo online para compartir por WhatsApp.
+							</p>
+						</div>
+					</a>
+
+					<a
+						class="link-card"
+						href="/tienda-online-para-whatsapp/"
+					>
+						<div class="link-icon">
+							🛍️
+						</div>
+
+						<div>
+							<h3>
+								Tienda online
+							</h3>
+
+							<p>
+								Vende desde Instagram y recibe pedidos organizados.
+							</p>
+						</div>
+					</a>
+
+					<a
+						class="link-card"
+						href="/recibir-pedidos-por-whatsapp/"
+					>
+						<div class="link-icon">
+							📦
+						</div>
+
+						<div>
+							<h3>
+								Pedidos por WhatsApp
+							</h3>
+
+							<p>
+								Recibe pedidos con cantidades y total automático.
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- INFO -->
+		<section class="info-section">
+			<div class="container">
+				<div class="info-card">
+					<div class="info-copy">
+						<h2>
+							¿Qué información puedes enviarnos?
+						</h2>
+
+						<p>
+							Para ayudarte más rápido, puedes contarnos qué tipo de negocio tienes, si vendes por Instagram o WhatsApp y qué productos manejas.
+						</p>
+					</div>
+
+					<div class="info-tags">
+						<span>Ropa</span>
+						<span>Comida</span>
+						<span>Cosmética</span>
+						<span>Accesorios</span>
+						<span>Instagram</span>
+						<span>WhatsApp</span>
+					</div>
 				</div>
 			</div>
 		</section>
 	</main>
+
 	<Footer />
 </BaseLayout>
 
 <style>
-	.mt-24 {
-		margin-top: 24px;
+	.contact-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
 	}
 
-	.mt-16 {
-		margin-top: 16px;
-	}
-
-	.card p {
-		margin: 10px 0 0;
-	}
-
-	.links {
-		margin: 12px 0 0;
-		padding-left: 18px;
+	.contact-layout {
 		display: grid;
-		gap: 8px;
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
 	}
 
-	.links a {
-		color: var(--text);
+	.contact-title {
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.contact-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.contact-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.contact-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.contact-point span,
+	.chat-card-item span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.contact-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+		margin-top: 36px;
+	}
+
+	.contact-btn {
+		height: 58px;
+		padding: 0 28px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.contact-btn-primary {
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		box-shadow:
+			0 16px 40px rgba(34, 197, 94, 0.24);
+	}
+
+	.contact-btn-primary:hover {
+		transform: translateY(-2px);
+	}
+
+	.contact-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	.contact-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.contact-preview {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	.chat-window {
+		width: 100%;
+		max-width: 520px;
+		background: #f8fafc;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.chat-header {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 18px 22px;
+		background: white;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.chat-avatar {
+		width: 52px;
+		height: 52px;
+		border-radius: 18px;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+	}
+
+	.chat-name {
+		font-size: 16px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.chat-status {
+		margin-top: 4px;
+		font-size: 13px;
+		color: #22c55e;
 		font-weight: 700;
 	}
 
-	.links a:hover {
-		color: var(--brand-strong);
+	.chat-body {
+		padding: 22px;
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.chat-message {
+		max-width: 82%;
+		padding: 14px 18px;
+		border-radius: 20px;
+		font-size: 15px;
+		line-height: 1.7;
+		font-weight: 500;
+	}
+
+	.chat-message.incoming {
+		background: white;
+		color: #0f172a;
+		border-top-left-radius: 8px;
+		box-shadow:
+			0 4px 16px rgba(15, 23, 42, 0.04);
+	}
+
+	.chat-message.outgoing {
+		align-self: flex-end;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		border-top-right-radius: 8px;
+	}
+
+	.chat-card {
+		background: white;
+		border-radius: 24px;
+		padding: 22px;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.chat-card-title {
+		font-size: 18px;
+		font-weight: 900;
+		color: #0f172a;
+		margin-bottom: 18px;
+	}
+
+	.chat-card-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 10px 0;
+		font-size: 15px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.chat-footer {
+		padding: 18px 22px;
+		background: white;
+		border-top: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.chat-input {
+		height: 52px;
+		border-radius: 999px;
+		background: #f1f5f9;
+		display: flex;
+		align-items: center;
+		padding: 0 18px;
+		font-size: 14px;
+		color: #94a3b8;
+		font-weight: 500;
+	}
+
+	.floating-box {
+		position: absolute;
+		right: -10px;
+		top: 30px;
+		padding: 14px 18px;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+		box-shadow:
+			0 18px 40px rgba(15, 23, 42, 0.08);
+		font-size: 14px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.links-section,
+	.info-section {
+		padding: 90px 0;
+	}
+
+	.links-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+	}
+
+	.link-card {
+		padding: 28px;
+		border-radius: 28px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		text-decoration: none;
+		transition: 0.25s ease;
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.04);
+	}
+
+	.link-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(37, 211, 102, 0.14);
+	}
+
+	.link-icon {
+		width: 58px;
+		height: 58px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 26px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.14),
+				rgba(37, 211, 102, 0.06)
+			);
+		margin-bottom: 22px;
+	}
+
+	.link-card h3,
+	.info-copy h2 {
+		font-weight: 900;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.link-card h3 {
+		font-size: 24px;
+	}
+
+	.link-card p,
+	.info-copy p {
+		margin-top: 12px;
+		color: #64748b;
+		line-height: 1.9;
+		font-weight: 500;
+	}
+
+	.info-card {
+		padding: 40px;
+		border-radius: 34px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(255, 255, 255, 0.92)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.14);
+	}
+
+	.info-copy h2 {
+		font-size: 42px;
+		line-height: 1;
+		max-width: 700px;
+	}
+
+	.info-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 28px;
+	}
+
+	.info-tags span {
+		height: 40px;
+		padding: 0 16px;
+		border-radius: 999px;
+		display: inline-flex;
+		align-items: center;
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		font-size: 14px;
+		font-weight: 700;
+		color: #475569;
+	}
+
+	@media (max-width: 1100px) {
+		.contact-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+
+		.links-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.floating-box {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.contact-hero {
+			padding: 80px 0 50px;
+		}
+
+		.contact-title {
+			font-size: 44px;
+		}
+
+		.contact-description {
+			font-size: 16px;
+		}
+
+		.info-copy h2 {
+			font-size: 34px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.contact-title {
+			font-size: 38px;
+		}
+
+		.contact-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.contact-btn {
+			width: 100%;
+		}
+
+		.info-card {
+			padding: 28px;
+		}
 	}
 </style>

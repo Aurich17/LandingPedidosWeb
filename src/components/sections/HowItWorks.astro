@@ -1,66 +1,249 @@
-<section id="como-funciona" class="section">
+<section id="como-funciona" class="how-section">
 	<div class="container">
-		<div class="head">
-			<span class="eyebrow">Así funciona</span>
-			<h2 class="h2">Tu tienda lista para pedir por WhatsApp</h2>
-			<p class="lead">Tres pasos simples para pasar de “chat desordenado” a pedidos claros y rápidos.</p>
+		<div class="how-head">
+			<h2 class="how-title">
+				Empieza a vender por WhatsApp en pocos minutos
+			</h2>
+
+			<p class="how-subtitle">
+				Crea tu catálogo online, comparte tu enlace y recibe pedidos organizados directamente en WhatsApp.
+			</p>
 		</div>
 
-		<div class="grid grid--3 steps">
-			<div class="card step">
-				<div class="step-top">
-					<span class="step-num">1</span>
-					<span class="step-title">Crea tu tienda</span>
+		<div class="how-grid">
+			<div class="how-card">
+				<div class="how-number">
+					01
 				</div>
-				<p class="muted">Elige el nombre, sube tu logo y tendrás un enlace para compartir.</p>
+
+				<div class="how-content">
+					<h3>
+						Crea tu tienda
+					</h3>
+
+					<p>
+						Configura el nombre de tu negocio, agrega tu logo y obtén un enlace listo para compartir.
+					</p>
+				</div>
+
+				<div class="how-line"></div>
 			</div>
-			<div class="card step">
-				<div class="step-top">
-					<span class="step-num">2</span>
-					<span class="step-title">Publica tus productos</span>
+
+			<div class="how-card">
+				<div class="how-number">
+					02
 				</div>
-				<p class="muted">Fotos, precios y opciones como talla, color o sabor.</p>
+
+				<div class="how-content">
+					<h3>
+						Publica tus productos
+					</h3>
+
+					<p>
+						Sube fotos, precios y variantes como tallas, colores o sabores desde tu panel.
+					</p>
+				</div>
+
+				<div class="how-line"></div>
 			</div>
-			<div class="card step">
-				<div class="step-top">
-					<span class="step-num">3</span>
-					<span class="step-title">Recibe pedidos por WhatsApp</span>
+
+			<div class="how-card">
+				<div class="how-number">
+					03
 				</div>
-				<p class="muted">El cliente arma su pedido y te llega el detalle con total, listo para cobrar.</p>
+
+				<div class="how-content">
+					<h3>
+						Recibe pedidos organizados
+					</h3>
+
+					<p>
+						El cliente arma el pedido y lo envía automáticamente a tu WhatsApp con el total listo para cobrar.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	.head {
-		max-width: 800px;
+	.how-section {
+		position: relative;
+		padding: 110px 0;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.06),
+				transparent 35%
+			),
+			linear-gradient(
+				to bottom,
+				#ffffff,
+				#f8fafc
+			);
+		overflow: hidden;
 	}
 
-	.steps {
+	.how-head {
+		max-width: 860px;
+		margin: 0 auto 70px;
+		text-align: center;
+	}
+
+	.how-title {
+		font-size: clamp(42px, 5vw, 68px);
+		line-height: 0.98;
+		font-weight: 950;
+		letter-spacing: -0.05em;
+		color: #0f172a;
+		max-width: 920px;
+		margin-inline: auto;
+	}
+
+	.how-subtitle {
+		margin-top: 24px;
+		font-size: 18px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 760px;
+		margin-inline: auto;
+	}
+
+	.how-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 26px;
+		position: relative;
+	}
+
+	.how-card {
+		position: relative;
+		padding: 34px;
+		border-radius: 30px;
+		background: rgba(255, 255, 255, 0.88);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+		box-shadow:
+			0 12px 35px rgba(15, 23, 42, 0.04);
+		transition: 0.3s ease;
+		overflow: hidden;
+	}
+
+	.how-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.04),
+				transparent
+			);
+		opacity: 0;
+		transition: 0.3s ease;
+	}
+
+	.how-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(37, 211, 102, 0.14);
+		box-shadow:
+			0 24px 50px rgba(15, 23, 42, 0.06);
+	}
+
+	.how-card:hover::before {
+		opacity: 1;
+	}
+
+	.how-number {
+		font-size: 14px;
+		font-weight: 900;
+		letter-spacing: 0.08em;
+		color: #22c55e;
+		margin-bottom: 26px;
+	}
+
+	.how-content h3 {
+		font-size: 28px;
+		line-height: 1.1;
+		font-weight: 900;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+		max-width: 260px;
+	}
+
+	.how-content p {
 		margin-top: 18px;
+		font-size: 16px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 320px;
 	}
 
-	.step-top {
-		display: flex;
-		align-items: center;
-		gap: 10px;
+	.how-line {
+		position: absolute;
+		top: 48px;
+		right: -40px;
+		width: 80px;
+		height: 1px;
+		background:
+			linear-gradient(
+				to right,
+				rgba(37, 211, 102, 0.3),
+				transparent
+			);
 	}
 
-	.step-num {
-		width: 34px;
-		height: 34px;
-		border-radius: 12px;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		background: linear-gradient(180deg, var(--brand), var(--brand-strong));
-		color: #fff;
-		font-weight: 900;
+	.how-card:last-child .how-line {
+		display: none;
 	}
 
-	.step-title {
-		font-weight: 900;
-		letter-spacing: -0.02em;
+	@media (max-width: 1100px) {
+		.how-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.how-line {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.how-section {
+			padding: 80px 0;
+		}
+
+		.how-title {
+			font-size: 42px;
+		}
+
+		.how-subtitle {
+			font-size: 16px;
+		}
+
+		.how-card {
+			padding: 28px;
+			border-radius: 24px;
+		}
+
+		.how-content h3 {
+			font-size: 24px;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.how-title {
+			font-size: 36px;
+		}
+
+		.how-content h3 {
+			font-size: 22px;
+		}
+
+		.how-content p {
+			font-size: 15px;
+			line-height: 1.8;
+		}
 	}
 </style>

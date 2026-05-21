@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Problem from "../components/sections/Problem.astro";
 import HowItWorks from "../components/sections/HowItWorks.astro";
@@ -7,33 +8,458 @@ import Benefits from "../components/sections/Benefits.astro";
 import Pricing from "../components/sections/Pricing.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
 import Footer from "../components/sections/Footer.astro";
-import SeoLandingSection from "../components/SeoLandingSection.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
-const canonical = canonicalUrl("/recibir-pedidos-por-whatsapp/");
-const title = "Recibir Pedidos por WhatsApp | Pedidos Web";
+const canonical =
+	canonicalUrl("/recibir-pedidos-por-whatsapp/");
+
+const title =
+	"Recibir Pedidos por WhatsApp | PedidosWeb";
+
 const description =
-  "Recibe pedidos por WhatsApp con el detalle completo: productos, cantidades, notas y total. Ideal para vender por Instagram y cerrar por chat sin desorden.";
+	"Recibe pedidos por WhatsApp con productos, cantidades y total automático. Ideal para vender desde Instagram, Facebook o WhatsApp sin mensajes desordenados.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
+
 	<main>
-		<SeoLandingSection
-			eyebrow="Pedidos por WhatsApp"
-			title="Recibe pedidos por WhatsApp sin caos"
-			lead="Tu cliente arma el pedido en tu catálogo y tú recibes un mensaje con el detalle y el total, listo para cobrar."
-			bullets={[
-				"Menos preguntas, más cierres",
-				"Pedido con notas (talla, color, indicaciones)",
-				"Funciona perfecto en celular",
-			]}
-		/>
+		<!-- SEO HERO -->
+		<section class="orders-hero">
+			<div class="container">
+				<div class="orders-layout">
+					<div class="orders-copy">
+						<h1 class="orders-title">
+							Recibe pedidos por WhatsApp sin mensajes desordenados
+						</h1>
+
+						<p class="orders-description">
+							Tus clientes arman el pedido desde tu catálogo online y tú recibes un mensaje completo con productos, cantidades y total listo para cobrar.
+						</p>
+
+						<div class="orders-points">
+							<div class="orders-point">
+								<span>✔</span>
+								Pedidos organizados automáticamente
+							</div>
+
+							<div class="orders-point">
+								<span>✔</span>
+								Menos preguntas repetidas
+							</div>
+
+							<div class="orders-point">
+								<span>✔</span>
+								Perfecto para Instagram y WhatsApp
+							</div>
+						</div>
+
+						<div class="orders-actions">
+							<a
+								class="orders-btn orders-btn-primary"
+								href={SITE.appUrl}
+							>
+								Crear mi tienda
+							</a>
+
+							<a
+								class="orders-btn orders-btn-secondary"
+								href={SITE.demoUrl}
+								target="_blank"
+								rel="noopener"
+							>
+								Ver tienda demo
+							</a>
+						</div>
+					</div>
+
+					<div class="orders-preview">
+						<div class="chat-window">
+							<div class="chat-header">
+								<div class="chat-avatar"></div>
+
+								<div class="chat-user">
+									<div class="chat-user-name">
+										PedidosWeb
+									</div>
+
+									<div class="chat-user-status">
+										en línea
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-body">
+								<div class="chat-message incoming">
+									Hola 👋 quiero hacer un pedido
+								</div>
+
+								<div class="chat-message outgoing">
+									Perfecto 👍 Puedes elegir tus productos desde el catálogo.
+								</div>
+
+								<div class="chat-order">
+									<div class="chat-order-title">
+										Nuevo pedido
+									</div>
+
+									<div class="chat-order-item">
+										<span>2x Hamburguesa</span>
+										<strong>S/ 90</strong>
+									</div>
+
+									<div class="chat-order-item">
+										<span>1x Salchipapa</span>
+										<strong>S/ 32</strong>
+									</div>
+
+									<div class="chat-order-item">
+										<span>1x Gaseosa</span>
+										<strong>S/ 8</strong>
+									</div>
+
+									<div class="chat-order-total">
+										<span>Total</span>
+										<strong>S/ 130</strong>
+									</div>
+								</div>
+
+								<div class="chat-message incoming">
+									Listo 😄 ¿Me compartes tu dirección?
+								</div>
+							</div>
+
+							<div class="chat-footer">
+								<div class="chat-input">
+									Escribe un mensaje...
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<Problem />
+
 		<HowItWorks />
+
 		<Benefits />
-		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
-		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+
+		<Pricing
+			appUrl={SITE.appUrl}
+			whatsappUrl={SITE.whatsappUrl}
+		/>
+
+		<FinalCTA
+			appUrl={SITE.appUrl}
+			demoUrl={SITE.demoUrl}
+		/>
 	</main>
+
 	<Footer />
 </BaseLayout>
+
+<style>
+	.orders-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
+	}
+
+	.orders-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
+	}
+
+	.orders-copy {
+		max-width: 620px;
+	}
+
+	.orders-title {
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.orders-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.orders-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.orders-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.orders-point span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.orders-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+		margin-top: 36px;
+	}
+
+	.orders-btn {
+		height: 58px;
+		padding: 0 28px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.orders-btn-primary {
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		box-shadow:
+			0 16px 40px rgba(34, 197, 94, 0.24);
+	}
+
+	.orders-btn-primary:hover {
+		transform: translateY(-2px);
+	}
+
+	.orders-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	.orders-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.orders-preview {
+		display: flex;
+		justify-content: center;
+	}
+
+	.chat-window {
+		width: 100%;
+		max-width: 520px;
+		background: #f8fafc;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.chat-header {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 18px 22px;
+		background: white;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.chat-avatar {
+		width: 52px;
+		height: 52px;
+		border-radius: 18px;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+	}
+
+	.chat-user-name {
+		font-size: 16px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.chat-user-status {
+		margin-top: 4px;
+		font-size: 13px;
+		color: #22c55e;
+		font-weight: 700;
+	}
+
+	.chat-body {
+		padding: 22px;
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.chat-message {
+		max-width: 82%;
+		padding: 14px 18px;
+		border-radius: 20px;
+		font-size: 15px;
+		line-height: 1.7;
+		font-weight: 500;
+	}
+
+	.chat-message.incoming {
+		background: white;
+		color: #0f172a;
+		border-top-left-radius: 8px;
+		box-shadow:
+			0 4px 16px rgba(15, 23, 42, 0.04);
+	}
+
+	.chat-message.outgoing {
+		align-self: flex-end;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		border-top-right-radius: 8px;
+	}
+
+	.chat-order {
+		background: white;
+		border-radius: 24px;
+		padding: 22px;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.04);
+	}
+
+	.chat-order-title {
+		font-size: 18px;
+		font-weight: 900;
+		color: #0f172a;
+		margin-bottom: 18px;
+	}
+
+	.chat-order-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 15px;
+		font-weight: 600;
+		color: #475569;
+		padding: 10px 0;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+	}
+
+	.chat-order-total {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 16px;
+		font-size: 18px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.chat-footer {
+		padding: 18px 22px;
+		background: white;
+		border-top: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.chat-input {
+		height: 52px;
+		border-radius: 999px;
+		background: #f1f5f9;
+		display: flex;
+		align-items: center;
+		padding: 0 18px;
+		font-size: 14px;
+		color: #94a3b8;
+		font-weight: 500;
+	}
+
+	@media (max-width: 1100px) {
+		.orders-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.orders-hero {
+			padding: 80px 0 50px;
+		}
+
+		.orders-title {
+			font-size: 44px;
+		}
+
+		.orders-description {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.orders-title {
+			font-size: 38px;
+		}
+
+		.orders-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.orders-btn {
+			width: 100%;
+		}
+	}
+</style>

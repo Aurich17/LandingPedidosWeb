@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Benefits from "../components/sections/Benefits.astro";
 import HowItWorks from "../components/sections/HowItWorks.astro";
@@ -8,34 +9,566 @@ import Pricing from "../components/sections/Pricing.astro";
 import FAQ from "../components/sections/FAQ.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
 import Footer from "../components/sections/Footer.astro";
-import SeoLandingSection from "../components/SeoLandingSection.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
-const canonical = canonicalUrl("/tienda-online-para-whatsapp/");
-const title = "Tienda Online para WhatsApp | Pedidos Web";
+const canonical =
+	canonicalUrl("/tienda-online-para-whatsapp/");
+
+const title =
+	"Tienda Online para WhatsApp | PedidosWeb";
+
 const description =
-  "Crea tu tienda online para WhatsApp en minutos. Comparte tu link, deja que el cliente arme el pedido y recibe el detalle y total por WhatsApp para cobrar y coordinar entrega.";
+	"Crea una tienda online para WhatsApp en minutos. Comparte tu enlace, muestra tus productos y recibe pedidos organizados directamente por WhatsApp.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
+
 	<main>
-		<SeoLandingSection
-			eyebrow="Tienda online para WhatsApp"
-			title="Convierte WhatsApp en tu tienda online"
-			lead="Tu catálogo se ve profesional y tus clientes compran desde el celular. Tú recibes el pedido ordenado por WhatsApp."
-			bullets={[
-				"Catálogo online listo para compartir",
-				"Pedidos con cantidades, notas y total",
-				"Perfecto para negocios que venden por redes",
-			]}
-		/>
+		<!-- SEO HERO -->
+		<section class="store-hero">
+			<div class="container">
+				<div class="store-layout">
+					<div class="store-copy">
+						<h1 class="store-title">
+							Convierte WhatsApp en tu tienda online
+						</h1>
+
+						<p class="store-description">
+							Muestra tus productos en una tienda moderna, comparte un solo enlace y deja que tus clientes hagan pedidos fácilmente desde el celular.
+						</p>
+
+						<div class="store-points">
+							<div class="store-point">
+								<span>✔</span>
+								Tienda online lista para compartir
+							</div>
+
+							<div class="store-point">
+								<span>✔</span>
+								Pedidos con total automático
+							</div>
+
+							<div class="store-point">
+								<span>✔</span>
+								Ideal para vender por Instagram y WhatsApp
+							</div>
+						</div>
+
+						<div class="store-actions">
+							<a
+								class="store-btn store-btn-primary"
+								href={SITE.appUrl}
+							>
+								Crear mi tienda
+							</a>
+
+							<a
+								class="store-btn store-btn-secondary"
+								href={SITE.demoUrl}
+								target="_blank"
+								rel="noopener"
+							>
+								Ver tienda demo
+							</a>
+						</div>
+					</div>
+
+					<div class="store-preview">
+						<div class="store-window">
+							<div class="store-window-top">
+								<div class="store-window-dots">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+
+								<div class="store-window-url">
+									tutienda.pedidosweb.shop
+								</div>
+							</div>
+
+							<div class="store-window-body">
+								<div class="store-banner">
+									<div class="store-banner-content">
+										<h3>
+											Tu catálogo listo para vender
+										</h3>
+
+										<p>
+											Comparte productos y recibe pedidos desde WhatsApp.
+										</p>
+									</div>
+								</div>
+
+								<div class="store-products">
+									<div class="store-product">
+										<img
+											src="/landing_demo/hamburguesa.webp"
+											alt="Hamburguesa"
+											loading="lazy"
+										/>
+
+										<div class="store-product-info">
+											<div>
+												<h4>Hamburguesa</h4>
+												<p>S/ 45</p>
+											</div>
+
+											<button>
+												Agregar
+											</button>
+										</div>
+									</div>
+
+									<div class="store-product">
+										<img
+											src="/landing_demo/salchipapa.jpg"
+											alt="Salchipapa"
+											loading="lazy"
+										/>
+
+										<div class="store-product-info">
+											<div>
+												<h4>Salchipapa</h4>
+												<p>S/ 32</p>
+											</div>
+
+											<button>
+												Agregar
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="store-cart">
+									<div class="store-cart-top">
+										<span>Total</span>
+
+										<strong>S/ 77</strong>
+									</div>
+
+									<div class="store-cart-btn">
+										Enviar pedido por WhatsApp
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="floating-card floating-card-1">
+							+12 pedidos hoy
+						</div>
+
+						<div class="floating-card floating-card-2">
+							Nuevo pedido recibido
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<Benefits />
+
 		<HowItWorks />
+
 		<Demo demoUrl={SITE.demoUrl} />
-		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
+
+		<Pricing
+			appUrl={SITE.appUrl}
+			whatsappUrl={SITE.whatsappUrl}
+		/>
+
 		<FAQ />
-		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+
+		<FinalCTA
+			appUrl={SITE.appUrl}
+			demoUrl={SITE.demoUrl}
+		/>
 	</main>
+
 	<Footer />
 </BaseLayout>
+
+<style>
+	.store-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
+	}
+
+	.store-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
+	}
+
+	.store-copy {
+		max-width: 620px;
+	}
+
+	.store-title {
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.store-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.store-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.store-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.store-point span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.store-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+		margin-top: 36px;
+	}
+
+	.store-btn {
+		height: 58px;
+		padding: 0 28px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.store-btn-primary {
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		box-shadow:
+			0 16px 40px rgba(34, 197, 94, 0.24);
+	}
+
+	.store-btn-primary:hover {
+		transform: translateY(-2px);
+	}
+
+	.store-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	.store-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.store-preview {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	.store-window {
+		width: 100%;
+		max-width: 560px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.store-window-top {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.store-window-dots {
+		display: flex;
+		gap: 6px;
+	}
+
+	.store-window-dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.4);
+	}
+
+	.store-window-url {
+		flex: 1;
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		font-size: 13px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.store-window-body {
+		padding: 22px;
+	}
+
+	.store-banner {
+		border-radius: 28px;
+		padding: 28px;
+		background:
+			linear-gradient(
+				135deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+	}
+
+	.store-banner-tag {
+		width: fit-content;
+		padding: 8px 14px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.18);
+		font-size: 13px;
+		font-weight: 800;
+		backdrop-filter: blur(10px);
+	}
+
+	.store-banner h3 {
+		margin-top: 18px;
+		font-size: 30px;
+		line-height: 1;
+		font-weight: 900;
+		letter-spacing: -0.04em;
+	}
+
+	.store-banner p {
+		margin-top: 14px;
+		font-size: 15px;
+		line-height: 1.8;
+		font-weight: 500;
+		max-width: 320px;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.store-products {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+		margin-top: 22px;
+	}
+
+	.store-product {
+		background: white;
+		border-radius: 22px;
+		padding: 14px;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.03);
+	}
+
+	.store-product img {
+		width: 100%;
+		height: 120px;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+
+	.store-product-info {
+		margin-top: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.store-product-info h4 {
+		font-size: 15px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.store-product-info p {
+		margin-top: 4px;
+		font-size: 14px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.store-product-info button {
+		height: 40px;
+		padding: 0 14px;
+		border-radius: 14px;
+		border: none;
+		background: rgba(37, 211, 102, 0.12);
+		color: #16a34a;
+		font-size: 14px;
+		font-weight: 800;
+		cursor: pointer;
+	}
+
+	.store-cart {
+		margin-top: 22px;
+		padding: 20px;
+		border-radius: 24px;
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.04);
+	}
+
+	.store-cart-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.store-cart-btn {
+		margin-top: 18px;
+		height: 54px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		font-size: 15px;
+		font-weight: 900;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	.floating-card {
+		position: absolute;
+		padding: 14px 18px;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+		box-shadow:
+			0 18px 40px rgba(15, 23, 42, 0.08);
+		font-size: 14px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.floating-card-1 {
+		top: 40px;
+		left: -20px;
+	}
+
+	.floating-card-2 {
+		bottom: 50px;
+		right: -10px;
+	}
+
+	@media (max-width: 1100px) {
+		.store-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+
+		.floating-card {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.store-hero {
+			padding: 80px 0 50px;
+		}
+
+		.store-title {
+			font-size: 44px;
+		}
+
+		.store-description {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.store-title {
+			font-size: 38px;
+		}
+
+		.store-products {
+			grid-template-columns: 1fr;
+		}
+
+		.store-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.store-btn {
+			width: 100%;
+		}
+	}
+</style>

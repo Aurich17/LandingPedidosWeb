@@ -1,101 +1,671 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Footer from "../components/sections/Footer.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
-const canonical = canonicalUrl("/sobre-nosotros/");
-const title = "Sobre Nosotros | Pedidos Web";
+const canonical =
+	canonicalUrl("/sobre-nosotros/");
+
+const title =
+	"Sobre Nosotros | PedidosWeb";
+
 const description =
-	"Conoce Pedidos Web: un sistema de catálogo y pedidos por WhatsApp para negocios. Diseñado para vender por redes con pedidos claros, con detalle y total.";
+	"Conoce PedidosWeb, la plataforma diseñada para ayudar a negocios a vender por WhatsApp con pedidos organizados y catálogos online.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
+
 	<main>
-		<section class="section">
+		<!-- HERO -->
+		<section class="about-hero">
 			<div class="container">
-				<span class="eyebrow">Sobre Pedidos Web</span>
-				<h1 class="h1">Hacemos que vender por WhatsApp sea más simple</h1>
-				<p class="lead">
-					Pedidos Web es un sistema pensado para emprendedores, tiendas pequeñas y negocios que venden por Instagram o WhatsApp y
-					necesitan un catálogo claro para recibir pedidos sin desorden.
-				</p>
+				<div class="about-hero-layout">
+					<div class="about-copy">
+						<h1 class="about-title">
+							Hacemos que vender por WhatsApp sea mucho más simple
+						</h1>
 
-				<div class="grid grid--2 mt-24">
-					<div class="card">
-						<h2 class="h3">Nuestra misión</h2>
-						<p>
-							Ayudar a negocios a recibir pedidos listos para cobrar por WhatsApp: con productos, cantidades, notas y total en un solo
-							mensaje. Menos preguntas, más cierres.
+						<p class="about-description">
+							PedidosWeb nació para ayudar a emprendedores y negocios que venden por Instagram, Facebook o WhatsApp a recibir pedidos más claros y organizados.
 						</p>
-					</div>
-					<div class="card">
-						<h2 class="h3">Por qué existe</h2>
-						<p>
-							Vender por chat funciona, pero se vuelve caótico: fotos una por una, precios repetidos y pedidos incompletos. Pedidos Web
-							ordena el proceso con un link de catálogo que el cliente entiende en segundos.
-						</p>
-					</div>
-				</div>
 
-				<div class="mt-24">
-					<h2 class="h2">Qué resuelve para tu negocio</h2>
-					<p>
-						Con Pedidos Web puedes crear un catálogo online para WhatsApp en minutos y compartirlo como link en bio, estados o mensajes.
-						Tus clientes eligen productos y tú recibes el pedido con detalle y total por WhatsApp, listo para coordinar pago y entrega
-						(Yape, Plin, transferencia o efectivo).
-					</p>
-					<ul class="list">
-						<li>Un solo enlace para todo tu catálogo.</li>
-						<li>Pedidos con opciones (talla, color, sabor) y notas.</li>
-						<li>Mejor experiencia en celular para comprar rápido.</li>
-						<li>Presentación más profesional para tu marca.</li>
-					</ul>
-				</div>
+						<div class="about-points">
+							<div class="about-point">
+								<span>✔</span>
+								Catálogos online fáciles de compartir
+							</div>
 
-				<div class="mt-24">
-					<h2 class="h2">A quién ayudamos</h2>
-					<p>
-						Ideal si vendes por redes y cierras por chat: ropa y accesorios, cosmética, regalos, postres y comida por encargo,
-						emprendimientos que venden por Instagram/Facebook y atienden por WhatsApp.
-					</p>
-					<p class="muted">
-						Si quieres hablar con nosotros o pedir una demo guiada, visita la página de contacto y escríbenos por WhatsApp.
-					</p>
-					<a class="btn btn-secondary" href="/contacto/">Ir a contacto</a>
+							<div class="about-point">
+								<span>✔</span>
+								Pedidos con total automático
+							</div>
+
+							<div class="about-point">
+								<span>✔</span>
+								Hecho para negocios que venden por redes
+							</div>
+						</div>
+					</div>
+
+					<div class="about-preview">
+						<div class="about-window">
+							<div class="about-window-top">
+								<div class="about-window-dots">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+
+								<div class="about-window-url">
+									pedidosweb.shop
+								</div>
+							</div>
+
+							<div class="about-window-body">
+								<div class="about-stats">
+									<div class="about-stat">
+										<strong>+1000</strong>
+										<span>Pedidos enviados</span>
+									</div>
+
+									<div class="about-stat">
+										<strong>24/7</strong>
+										<span>Tienda online activa</span>
+									</div>
+
+									<div class="about-stat">
+										<strong>WhatsApp</strong>
+										<span>Integración directa</span>
+									</div>
+								</div>
+
+								<div class="about-card">
+									<div class="about-card-icon">
+										📦
+									</div>
+
+									<div>
+										<h3>
+											Pedidos organizados
+										</h3>
+
+										<p>
+											Productos, cantidades y total en un solo mensaje.
+										</p>
+									</div>
+								</div>
+
+								<div class="about-card">
+									<div class="about-card-icon">
+										📱
+									</div>
+
+									<div>
+										<h3>
+											Optimizado para celular
+										</h3>
+
+										<p>
+											Tus clientes compran fácilmente desde cualquier teléfono.
+										</p>
+									</div>
+								</div>
+
+								<div class="about-card">
+									<div class="about-card-icon">
+										⚡
+									</div>
+
+									<div>
+										<h3>
+											Simple y rápido
+										</h3>
+
+										<p>
+											Crea tu catálogo y empieza a vender en minutos.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+		<!-- MISSION -->
+		<section class="about-section">
+			<div class="container">
+				<div class="about-grid">
+					<div class="about-info-card">
+						<h2>
+							Nuestra misión
+						</h2>
+
+						<p>
+							Ayudar a negocios y emprendedores a vender de forma más profesional usando WhatsApp como canal principal de ventas.
+						</p>
+
+						<p>
+							Queremos que recibir pedidos sea rápido, claro y organizado, sin depender de mensajes desordenados o fotos enviadas manualmente.
+						</p>
+					</div>
+
+					<div class="about-info-card">
+						<h2>
+							Por qué existe PedidosWeb
+						</h2>
+
+						<p>
+							Muchos negocios venden por Instagram o WhatsApp, pero terminan perdiendo tiempo respondiendo precios, enviando fotos y organizando pedidos manualmente.
+						</p>
+
+						<p>
+							PedidosWeb convierte ese proceso en una experiencia más simple y profesional para el negocio y para el cliente.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- WHAT IT SOLVES -->
+		<section class="solution-section">
+			<div class="container">
+				<div class="solution-layout">
+					<div class="solution-copy">
+						<h2>
+							Qué resuelve para tu negocio
+						</h2>
+
+						<p>
+							Con PedidosWeb puedes tener una tienda online simple, compartir un enlace y recibir pedidos completos directamente por WhatsApp.
+						</p>
+
+						<div class="solution-list">
+							<div class="solution-item">
+								<span>✔</span>
+								Un solo enlace para compartir tu catálogo
+							</div>
+
+							<div class="solution-item">
+								<span>✔</span>
+								Pedidos con notas, variantes y total automático
+							</div>
+
+							<div class="solution-item">
+								<span>✔</span>
+								Mejor experiencia de compra desde celular
+							</div>
+
+							<div class="solution-item">
+								<span>✔</span>
+								Una imagen más profesional para tu marca
+							</div>
+						</div>
+					</div>
+
+					<div class="solution-box">
+						<div class="solution-box-top">
+							<div class="solution-box-line"></div>
+
+							<div class="solution-box-line solution-box-line-small"></div>
+						</div>
+
+						<div class="solution-box-content">
+							<h3>
+								Ideal para negocios que venden por redes
+							</h3>
+
+							<p>
+								Ropa, comida, cosmética, regalos, accesorios y cualquier negocio que cierre ventas por WhatsApp.
+							</p>
+
+							<div class="solution-tags">
+								<span>Instagram</span>
+								<span>WhatsApp</span>
+								<span>Facebook</span>
+								<span>TikTok</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CONTACT -->
+		<section class="contact-section">
+			<div class="container">
+				<div class="contact-card">
+					<div class="contact-copy">
+						<h2>
+							¿Quieres hablar con nosotros?
+						</h2>
+
+						<p>
+							Si tienes preguntas o quieres conocer cómo funciona PedidosWeb, puedes escribirnos directamente por WhatsApp.
+						</p>
+					</div>
+
+					<a
+						class="contact-btn"
+						href="/contacto/"
+					>
+						Ir a contacto
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA
+			appUrl={SITE.appUrl}
+			demoUrl={SITE.demoUrl}
+		/>
 	</main>
+
 	<Footer />
 </BaseLayout>
 
 <style>
-	.mt-24 {
-		margin-top: 24px;
+	.about-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
 	}
 
-	.list {
-		margin: 12px 0 0;
-		padding-left: 18px;
+	.about-hero-layout {
 		display: grid;
-		gap: 8px;
-		color: var(--muted);
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
+	}
+
+	.about-title {
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.about-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.about-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.about-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.about-point span,
+	.solution-item span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.about-preview {
+		display: flex;
+		justify-content: center;
+	}
+
+	.about-window {
+		width: 100%;
+		max-width: 560px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.about-window-top {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.about-window-dots {
+		display: flex;
+		gap: 6px;
+	}
+
+	.about-window-dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.4);
+	}
+
+	.about-window-url {
+		flex: 1;
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		font-size: 13px;
+		color: #64748b;
 		font-weight: 600;
 	}
 
-	h2,
-	h3 {
-		margin: 0;
+	.about-window-body {
+		padding: 22px;
 	}
 
-	.card p {
-		margin: 10px 0 0;
-		color: var(--muted);
+	.about-stats {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 12px;
+	}
+
+	.about-stat {
+		padding: 18px;
+		border-radius: 20px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.10),
+				rgba(37, 211, 102, 0.03)
+			);
+		text-align: center;
+	}
+
+	.about-stat strong {
+		display: block;
+		font-size: 20px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.about-stat span {
+		display: block;
+		margin-top: 6px;
+		font-size: 13px;
+		line-height: 1.5;
+		color: #64748b;
 		font-weight: 600;
+	}
+
+	.about-card {
+		margin-top: 18px;
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+		padding: 20px;
+		border-radius: 24px;
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.about-card-icon {
+		width: 54px;
+		height: 54px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 24px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.14),
+				rgba(37, 211, 102, 0.06)
+			);
+	}
+
+	.about-card h3,
+	.about-info-card h2,
+	.solution-copy h2,
+	.contact-copy h2,
+	.solution-box-content h3 {
+		color: #0f172a;
+		font-weight: 900;
+		letter-spacing: -0.04em;
+	}
+
+	.about-card h3 {
+		font-size: 20px;
+	}
+
+	.about-card p,
+	.about-info-card p,
+	.solution-copy p,
+	.solution-box-content p,
+	.contact-copy p {
+		margin-top: 10px;
+		color: #64748b;
+		line-height: 1.9;
+		font-weight: 500;
+	}
+
+	.about-section,
+	.solution-section,
+	.contact-section {
+		padding: 90px 0;
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 26px;
+	}
+
+	.about-info-card {
+		padding: 34px;
+		border-radius: 30px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 12px 35px rgba(15, 23, 42, 0.04);
+	}
+
+	.about-info-card h2,
+	.solution-copy h2,
+	.contact-copy h2 {
+		font-size: 42px;
+		line-height: 1;
+	}
+
+	.solution-layout {
+		display: grid;
+		grid-template-columns: 1fr 420px;
+		gap: 60px;
+		align-items: center;
+	}
+
+	.solution-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 28px;
+	}
+
+	.solution-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.solution-box {
+		padding: 30px;
+		border-radius: 32px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(255, 255, 255, 0.92)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.14);
+	}
+
+	.solution-box-top {
+		margin-bottom: 28px;
+	}
+
+	.solution-box-line {
+		height: 14px;
+		border-radius: 999px;
+		background: rgba(15, 23, 42, 0.08);
+	}
+
+	.solution-box-line-small {
+		width: 60%;
+		margin-top: 10px;
+	}
+
+	.solution-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 22px;
+	}
+
+	.solution-tags span {
+		height: 38px;
+		padding: 0 14px;
+		border-radius: 999px;
+		display: inline-flex;
+		align-items: center;
+		background: white;
+		font-size: 14px;
+		font-weight: 700;
+		color: #475569;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.contact-card {
+		padding: 40px;
+		border-radius: 34px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(255, 255, 255, 0.92)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.14);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	.contact-btn {
+		height: 56px;
+		padding: 0 26px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		font-size: 15px;
+		font-weight: 800;
+		text-decoration: none;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	@media (max-width: 1100px) {
+		.about-hero-layout,
+		.solution-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.about-hero {
+			padding: 80px 0 50px;
+		}
+
+		.about-title {
+			font-size: 44px;
+		}
+
+		.about-description {
+			font-size: 16px;
+		}
+
+		.about-info-card h2,
+		.solution-copy h2,
+		.contact-copy h2 {
+			font-size: 34px;
+		}
+
+		.contact-card {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.about-title {
+			font-size: 38px;
+		}
+
+		.about-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-btn {
+			width: 100%;
+		}
 	}
 </style>

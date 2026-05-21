@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import Header from "../components/sections/Header.astro";
 import Problem from "../components/sections/Problem.astro";
 import HowItWorks from "../components/sections/HowItWorks.astro";
@@ -8,34 +9,502 @@ import Benefits from "../components/sections/Benefits.astro";
 import Pricing from "../components/sections/Pricing.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
 import Footer from "../components/sections/Footer.astro";
-import SeoLandingSection from "../components/SeoLandingSection.astro";
+
 import { SITE, canonicalUrl } from "../lib/site";
 
 const canonical = canonicalUrl("/catalogo-para-whatsapp/");
-const title = "Catálogo para WhatsApp con Link | Pedidos Web";
+
+const title =
+	"Catálogo para WhatsApp con Link | PedidosWeb";
+
 const description =
-  "Crea un catálogo para WhatsApp con link para compartir. Tus clientes ven productos y precios, arman su pedido y te llega por WhatsApp con detalle y total.";
+	"Crea un catálogo para WhatsApp con tu propio enlace. Comparte productos, recibe pedidos organizados y vende más desde WhatsApp.";
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
+
 	<main>
-		<SeoLandingSection
-			eyebrow="Catálogo para WhatsApp"
-			title="Tu catálogo para WhatsApp en un solo enlace"
-			lead="Deja de enviar fotos una por una. Comparte un link con tus productos, y recibe pedidos claros por WhatsApp."
-			bullets={[
-				"Link para poner en Instagram y estados",
-				"Productos con fotos, precios y opciones",
-				"Pedido con detalle y total listo para cobrar",
-			]}
-		/>
+		<!-- HERO SEO -->
+		<section class="seo-hero">
+			<div class="container">
+				<div class="seo-hero-layout">
+					<div class="seo-hero-copy">
+						<h1 class="seo-hero-title">
+							Crea un catálogo para WhatsApp con tu propio enlace
+						</h1>
+
+						<p class="seo-hero-description">
+							Muestra tus productos en una tienda online simple y recibe pedidos organizados directamente por WhatsApp.
+						</p>
+
+						<div class="seo-hero-points">
+							<div class="seo-point">
+								<span>✔</span>
+								Comparte tu catálogo en Instagram y WhatsApp
+							</div>
+
+							<div class="seo-point">
+								<span>✔</span>
+								Productos con fotos, precios y variantes
+							</div>
+
+							<div class="seo-point">
+								<span>✔</span>
+								Pedidos con detalle y total automático
+							</div>
+						</div>
+
+						<div class="seo-hero-actions">
+							<a
+								class="seo-btn seo-btn-primary"
+								href={SITE.appUrl}
+							>
+								Crear mi tienda
+							</a>
+
+							<a
+								class="seo-btn seo-btn-secondary"
+								href={SITE.demoUrl}
+								target="_blank"
+								rel="noopener"
+							>
+								Ver tienda demo
+							</a>
+						</div>
+					</div>
+
+					<div class="seo-hero-preview">
+						<div class="seo-preview-window">
+							<div class="seo-preview-header">
+								<div class="seo-preview-dots">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+
+								<div class="seo-preview-url">
+									tutienda.pedidosweb.shop
+								</div>
+							</div>
+
+							<div class="seo-preview-body">
+								<div class="seo-preview-banner">
+									<div class="seo-preview-avatar"></div>
+
+									<div>
+										<div class="seo-preview-title">
+											Tienda Demo
+										</div>
+
+										<div class="seo-preview-subtitle">
+											Compra fácil desde WhatsApp
+										</div>
+									</div>
+								</div>
+
+								<div class="seo-preview-grid">
+									<div class="seo-preview-card">
+										<img
+											src="/landing_demo/hamburguesa.webp"
+											alt="Hamburguesa"
+											loading="lazy"
+										/>
+
+										<div class="seo-preview-info">
+											<h3>Hamburguesa</h3>
+											<p>S/ 45</p>
+										</div>
+									</div>
+
+									<div class="seo-preview-card">
+										<img
+											src="/landing_demo/salchipapa.jpg"
+											alt="Salchipapa"
+											loading="lazy"
+										/>
+
+										<div class="seo-preview-info">
+											<h3>Salchipapa</h3>
+											<p>S/ 32</p>
+										</div>
+									</div>
+
+									<div class="seo-preview-card">
+										<img
+											src="/landing_demo/broster.avif"
+											alt="Broster"
+											loading="lazy"
+										/>
+
+										<div class="seo-preview-info">
+											<h3>Broster</h3>
+											<p>S/ 18</p>
+										</div>
+									</div>
+
+									<div class="seo-preview-card">
+										<img
+											src="/landing_demo/Hot_dog.png"
+											alt="Hot dog"
+											loading="lazy"
+										/>
+
+										<div class="seo-preview-info">
+											<h3>Hot dog</h3>
+											<p>S/ 29</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="seo-preview-cta">
+									Enviar pedido por WhatsApp
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<Problem />
+
 		<HowItWorks />
+
 		<Demo demoUrl={SITE.demoUrl} />
+
 		<Benefits />
-		<Pricing appUrl={SITE.appUrl} whatsappUrl={SITE.whatsappUrl} />
-		<FinalCTA appUrl={SITE.appUrl} demoUrl={SITE.demoUrl} />
+
+		<Pricing
+			appUrl={SITE.appUrl}
+			whatsappUrl={SITE.whatsappUrl}
+		/>
+
+		<FinalCTA
+			appUrl={SITE.appUrl}
+			demoUrl={SITE.demoUrl}
+		/>
 	</main>
+
 	<Footer />
 </BaseLayout>
+
+<style>
+	.seo-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
+	}
+
+	.seo-hero-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
+	}
+
+	.seo-hero-copy {
+		max-width: 620px;
+	}
+
+	.seo-hero-title {
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.seo-hero-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.seo-hero-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.seo-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.seo-point span {
+		color: #22c55e;
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.seo-hero-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+		margin-top: 36px;
+	}
+
+	.seo-btn {
+		height: 58px;
+		padding: 0 28px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.seo-btn-primary {
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		box-shadow:
+			0 16px 40px rgba(34, 197, 94, 0.24);
+	}
+
+	.seo-btn-primary:hover {
+		transform: translateY(-2px);
+	}
+
+	.seo-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	.seo-btn-secondary:hover {
+		background: rgba(15, 23, 42, 0.03);
+		transform: translateY(-2px);
+	}
+
+	.seo-hero-preview {
+		display: flex;
+		justify-content: center;
+	}
+
+	.seo-preview-window {
+		width: 100%;
+		max-width: 580px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 32px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.seo-preview-header {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.seo-preview-dots {
+		display: flex;
+		gap: 6px;
+	}
+
+	.seo-preview-dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.4);
+	}
+
+	.seo-preview-url {
+		flex: 1;
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		font-size: 13px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.seo-preview-body {
+		padding: 22px;
+	}
+
+	.seo-preview-banner {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 18px;
+		border-radius: 24px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(37, 211, 102, 0.04)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.10);
+	}
+
+	.seo-preview-avatar {
+		width: 52px;
+		height: 52px;
+		border-radius: 18px;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+	}
+
+	.seo-preview-title {
+		font-size: 20px;
+		font-weight: 900;
+		color: #0f172a;
+	}
+
+	.seo-preview-subtitle {
+		margin-top: 4px;
+		font-size: 14px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.seo-preview-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+		margin-top: 22px;
+	}
+
+	.seo-preview-card {
+		background: white;
+		border-radius: 22px;
+		padding: 14px;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		box-shadow:
+			0 10px 30px rgba(15, 23, 42, 0.03);
+	}
+
+	.seo-preview-card img {
+		width: 100%;
+		height: 120px;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+
+	.seo-preview-info {
+		margin-top: 12px;
+	}
+
+	.seo-preview-info h3 {
+		font-size: 15px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.seo-preview-info p {
+		margin-top: 4px;
+		font-size: 14px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.seo-preview-cta {
+		margin-top: 22px;
+		height: 56px;
+		border-radius: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		font-size: 16px;
+		font-weight: 900;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	@media (max-width: 1100px) {
+		.seo-hero-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.seo-hero {
+			padding: 80px 0 50px;
+		}
+
+		.seo-hero-title {
+			font-size: 44px;
+		}
+
+		.seo-hero-description {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.seo-hero-title {
+			font-size: 38px;
+		}
+
+		.seo-preview-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.seo-hero-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.seo-btn {
+			width: 100%;
+		}
+	}
+</style>

@@ -1,82 +1,628 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
 import Header from "../../components/sections/Header.astro";
 import Footer from "../../components/sections/Footer.astro";
+
 import { SITE, canonicalUrl } from "../../lib/site";
 
-const canonical = canonicalUrl("/blog/");
-const title = "Blog: vender por WhatsApp | Pedidos Web";
+const canonical =
+	canonicalUrl("/blog/");
+
+const title =
+	"Blog: vender por WhatsApp | PedidosWeb";
+
 const description =
-	"Guías y consejos para vender por WhatsApp: catálogo digital, tomar pedidos, organizar el chat y recibir pedidos con detalle y total.";
+	"Guías y estrategias para vender por WhatsApp, crear catálogos online y recibir pedidos organizados desde Instagram y redes sociales.";
 
 const posts = [
 	{
 		href: "/blog/como-tomar-pedidos-por-whatsapp/",
-		title: "Cómo tomar pedidos por WhatsApp (sin caos)",
-		desc: "Checklist y proceso para que tus clientes envíen pedidos completos: productos, cantidades, notas y total.",
+		title: "Cómo tomar pedidos por WhatsApp sin caos",
+		desc: "Aprende a recibir pedidos claros con productos, cantidades y total automático.",
+		tag: "Pedidos",
+		time: "5 min",
 	},
+
 	{
 		href: "/blog/como-crear-catalogo-digital/",
 		title: "Cómo crear un catálogo digital para WhatsApp",
-		desc: "Qué incluir en tu catálogo, fotos, precios, link para compartir y cómo cerrar más rápido por chat.",
+		desc: "Qué incluir en tu catálogo y cómo compartirlo para vender más rápido.",
+		tag: "Catálogo",
+		time: "6 min",
 	},
+
 	{
 		href: "/blog/como-vender-por-whatsapp/",
-		title: "Cómo vender por WhatsApp y aumentar cierres",
-		desc: "Mensajes, link en bio, objeciones, seguimiento y el flujo ideal para vender por redes y WhatsApp.",
+		title: "Cómo vender por WhatsApp y cerrar más ventas",
+		desc: "Estrategias simples para vender desde Instagram, Facebook y WhatsApp.",
+		tag: "Ventas",
+		time: "7 min",
 	},
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
-	<Header appUrl={SITE.appUrl} />
-	<main>
-		<section class="section">
-			<div class="container">
-				<span class="eyebrow">Blog</span>
-				<h1 class="h1">Guías para vender por WhatsApp</h1>
-				<p class="lead">
-					Contenido práctico para emprendedores y negocios en Perú: catálogo para WhatsApp, cómo tomar pedidos y cómo vender sin perder
-					tiempo en el chat.
-				</p>
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+>
+	<Header
+		appUrl={SITE.appUrl}
+		demoUrl={SITE.demoUrl}
+	/>
 
-				<div class="grid grid--3 mt-24">
+	<main>
+		<!-- HERO -->
+		<section class="blog-hero">
+			<div class="container">
+				<div class="blog-hero-layout">
+					<div class="blog-copy">
+						<div class="blog-label">
+							Blog
+						</div>
+
+						<h1 class="blog-title">
+							Guías para vender por WhatsApp
+						</h1>
+
+						<p class="blog-description">
+							Consejos prácticos para emprendedores y negocios que venden por Instagram, Facebook y WhatsApp.
+						</p>
+
+						<div class="blog-points">
+							<div class="blog-point">
+								<span>✔</span>
+								Catálogos online
+							</div>
+
+							<div class="blog-point">
+								<span>✔</span>
+								Pedidos organizados
+							</div>
+
+							<div class="blog-point">
+								<span>✔</span>
+								Estrategias para vender más
+							</div>
+						</div>
+					</div>
+
+					<div class="blog-preview">
+						<div class="blog-window">
+							<div class="blog-window-top">
+								<div class="blog-window-dots">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+
+								<div class="blog-window-url">
+									pedidosweb.shop/blog
+								</div>
+							</div>
+
+							<div class="blog-window-body">
+								<div class="blog-mini-post">
+									<div class="blog-mini-tag">
+										Catálogo
+									</div>
+
+									<h3>
+										Cómo crear un catálogo para WhatsApp
+									</h3>
+
+									<p>
+										Aprende a organizar productos, precios y fotos.
+									</p>
+								</div>
+
+								<div class="blog-mini-post">
+									<div class="blog-mini-tag">
+										Ventas
+									</div>
+
+									<h3>
+										Cómo vender más desde Instagram
+									</h3>
+
+									<p>
+										Usa un solo enlace para recibir pedidos organizados.
+									</p>
+								</div>
+
+								<div class="blog-note">
+									Nuevos artículos y guías próximamente.
+								</div>
+							</div>
+						</div>
+
+						<div class="floating-post">
+							+3 artículos
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- POSTS -->
+		<section class="posts-section">
+			<div class="container">
+				<div class="posts-grid">
 					{posts.map((post) => (
-						<a class="card post" href={post.href}>
-							<h2 class="h3">{post.title}</h2>
-							<p class="muted">{post.desc}</p>
-							<span class="more">Leer artículo →</span>
+						<a
+							class="post-card"
+							href={post.href}
+						>
+							<div class="post-top">
+								<div class="post-tag">
+									{post.tag}
+								</div>
+
+								<div class="post-time">
+									{post.time}
+								</div>
+							</div>
+
+							<h2>
+								{post.title}
+							</h2>
+
+							<p>
+								{post.desc}
+							</p>
+
+							<div class="post-more">
+								Leer artículo
+								<span>→</span>
+							</div>
 						</a>
 					))}
 				</div>
 			</div>
 		</section>
+
+		<!-- CTA -->
+		<section class="blog-cta-section">
+			<div class="container">
+				<div class="blog-cta">
+					<div class="blog-cta-copy">
+						<h2>
+							¿Quieres vender mejor por WhatsApp?
+						</h2>
+
+						<p>
+							Crea tu tienda online y empieza a recibir pedidos organizados desde hoy.
+						</p>
+					</div>
+
+					<div class="blog-cta-actions">
+						<a
+							class="blog-cta-btn blog-cta-btn-primary"
+							href={SITE.appUrl}
+						>
+							Crear mi tienda
+						</a>
+
+						<a
+							class="blog-cta-btn blog-cta-btn-secondary"
+							href={SITE.demoUrl}
+							target="_blank"
+							rel="noopener"
+						>
+							Ver demo
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
+
 	<Footer />
 </BaseLayout>
 
 <style>
-	.mt-24 {
-		margin-top: 24px;
+	.blog-hero {
+		position: relative;
+		padding: 110px 0 80px;
+		background:
+			radial-gradient(
+				circle at top left,
+				rgba(37, 211, 102, 0.10),
+				transparent 35%
+			),
+			radial-gradient(
+				circle at bottom right,
+				rgba(59, 130, 246, 0.08),
+				transparent 35%
+			),
+			#ffffff;
+		overflow: hidden;
 	}
 
-	.post {
-		text-decoration: none;
-		color: inherit;
+	.blog-hero-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 70px;
+		align-items: center;
 	}
 
-	.post p {
-		margin: 10px 0 0;
+	.blog-label {
+		width: fit-content;
+		padding: 10px 16px;
+		border-radius: 999px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(37, 211, 102, 0.04)
+			);
+		color: #16a34a;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0.02em;
 	}
 
-	.more {
-		margin-top: 12px;
-		display: inline-flex;
+	.blog-title {
+		margin-top: 26px;
+		font-size: clamp(46px, 6vw, 78px);
+		line-height: 0.95;
+		font-weight: 950;
+		letter-spacing: -0.06em;
+		color: #0f172a;
+		max-width: 760px;
+	}
+
+	.blog-description {
+		margin-top: 26px;
+		font-size: 19px;
+		line-height: 1.9;
+		color: #64748b;
+		font-weight: 500;
+		max-width: 580px;
+	}
+
+	.blog-points {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-top: 34px;
+	}
+
+	.blog-point {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #475569;
+	}
+
+	.blog-point span {
+		color: #22c55e;
+		font-size: 18px;
 		font-weight: 900;
-		color: var(--text);
 	}
 
-	.post:hover .more {
-		color: var(--brand-strong);
+	.blog-preview {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	.blog-window {
+		width: 100%;
+		max-width: 560px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		border-radius: 34px;
+		overflow: hidden;
+		backdrop-filter: blur(12px);
+		box-shadow:
+			0 30px 80px rgba(15, 23, 42, 0.08);
+	}
+
+	.blog-window-top {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.blog-window-dots {
+		display: flex;
+		gap: 6px;
+	}
+
+	.blog-window-dots span {
+		width: 8px;
+		height: 8px;
+		border-radius: 999px;
+		background: rgba(100, 116, 139, 0.4);
+	}
+
+	.blog-window-url {
+		flex: 1;
+		height: 38px;
+		border-radius: 999px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		display: flex;
+		align-items: center;
+		padding: 0 14px;
+		font-size: 13px;
+		color: #64748b;
+		font-weight: 600;
+	}
+
+	.blog-window-body {
+		padding: 22px;
+	}
+
+	.blog-mini-post {
+		padding: 24px;
+		border-radius: 24px;
+		background: white;
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		margin-bottom: 16px;
+	}
+
+	.blog-mini-tag,
+	.post-tag {
+		width: fit-content;
+		padding: 8px 14px;
+		border-radius: 999px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(37, 211, 102, 0.04)
+			);
+		color: #16a34a;
+		font-size: 12px;
+		font-weight: 800;
+	}
+
+	.blog-mini-post h3 {
+		margin-top: 18px;
+		font-size: 24px;
+		line-height: 1.1;
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		color: #0f172a;
+	}
+
+	.blog-mini-post p {
+		margin-top: 10px;
+		color: #64748b;
+		line-height: 1.8;
+		font-weight: 500;
+	}
+
+	.blog-note {
+		margin-top: 18px;
+		padding: 18px;
+		border-radius: 20px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.10),
+				rgba(37, 211, 102, 0.04)
+			);
+		font-size: 15px;
+		font-weight: 700;
+		color: #16a34a;
+		text-align: center;
+	}
+
+	.floating-post {
+		position: absolute;
+		top: 40px;
+		right: -10px;
+		padding: 14px 18px;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		backdrop-filter: blur(10px);
+		box-shadow:
+			0 18px 40px rgba(15, 23, 42, 0.08);
+		font-size: 14px;
+		font-weight: 800;
+		color: #0f172a;
+	}
+
+	.posts-section {
+		padding: 90px 0;
+	}
+
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+	}
+
+	.post-card {
+		padding: 30px;
+		border-radius: 30px;
+		background: rgba(255, 255, 255, 0.92);
+		border: 1px solid rgba(15, 23, 42, 0.06);
+		text-decoration: none;
+		transition: 0.25s ease;
+		box-shadow:
+			0 12px 35px rgba(15, 23, 42, 0.04);
+	}
+
+	.post-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(37, 211, 102, 0.14);
+		box-shadow:
+			0 20px 45px rgba(15, 23, 42, 0.06);
+	}
+
+	.post-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.post-time {
+		font-size: 13px;
+		font-weight: 700;
+		color: #94a3b8;
+	}
+
+	.post-card h2,
+	.blog-cta-copy h2 {
+		margin-top: 22px;
+		font-size: 30px;
+		line-height: 1.05;
+		font-weight: 900;
+		letter-spacing: -0.04em;
+		color: #0f172a;
+	}
+
+	.post-card p,
+	.blog-cta-copy p {
+		margin-top: 14px;
+		color: #64748b;
+		line-height: 1.9;
+		font-weight: 500;
+	}
+
+	.post-more {
+		margin-top: 26px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 15px;
+		font-weight: 800;
+		color: #16a34a;
+	}
+
+	.post-more span {
+		transition: 0.2s ease;
+	}
+
+	.post-card:hover .post-more span {
+		transform: translateX(4px);
+	}
+
+	.blog-cta-section {
+		padding: 0 0 90px;
+	}
+
+	.blog-cta {
+		padding: 40px;
+		border-radius: 34px;
+		background:
+			linear-gradient(
+				180deg,
+				rgba(37, 211, 102, 0.12),
+				rgba(255, 255, 255, 0.92)
+			);
+		border: 1px solid rgba(37, 211, 102, 0.14);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	.blog-cta-copy h2 {
+		font-size: 42px;
+		line-height: 1;
+		margin-top: 0;
+	}
+
+	.blog-cta-actions {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	.blog-cta-btn {
+		height: 56px;
+		padding: 0 26px;
+		border-radius: 18px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 15px;
+		font-weight: 800;
+		transition: 0.25s ease;
+	}
+
+	.blog-cta-btn-primary {
+		background:
+			linear-gradient(
+				180deg,
+				#22c55e,
+				#16a34a
+			);
+		color: white;
+		box-shadow:
+			0 14px 40px rgba(34, 197, 94, 0.22);
+	}
+
+	.blog-cta-btn-secondary {
+		background: white;
+		color: #0f172a;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+	}
+
+	@media (max-width: 1100px) {
+		.blog-hero-layout {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+
+		.posts-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.blog-cta {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.floating-post {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.blog-hero {
+			padding: 80px 0 50px;
+		}
+
+		.blog-title {
+			font-size: 44px;
+		}
+
+		.blog-description {
+			font-size: 16px;
+		}
+
+		.blog-cta-copy h2 {
+			font-size: 34px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.blog-title {
+			font-size: 38px;
+		}
+
+		.blog-cta-actions {
+			width: 100%;
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.blog-cta-btn {
+			width: 100%;
+		}
 	}
 </style>
